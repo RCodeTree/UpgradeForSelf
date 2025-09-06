@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>韦克荣 - 武汉职业技术大学 - 计算机应用技术 - 简历</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "SimSun", Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+            background: #fff;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+
+        /* 顶部个人信息区域 */
+        .header-section {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+
+        .photo-placeholder {
+            width: 100px;
+            height: 130px;
+            border: 1px solid #333;
+            margin-right: 20px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+        }
+
+        .personal-info {
+            flex: 1;
+        }
+
+        .name-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .contact-info div {
+            margin-bottom: 2px;
+        }
+
+        /* 求职意向 */
+        .job-intention {
+            background: #f8f8f8;
+            padding: 8px 10px;
+            margin: 10px 0;
+            border-left: 4px solid #000;
+        }
+
+        .job-intention strong {
+            font-weight: bold;
+        }
+
+        /* 章节标题 */
+        .section-title {
+            background: #000;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 12px 0 8px 0;
+        }
+
+        /* 教育背景 */
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .edu-details {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        /* 工作经历 */
+        .work-item {
+            margin-bottom: 10px;
+            border-left: 2px solid #ccc;
+            padding-left: 8px;
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .work-company {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .work-duties {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .work-duties ul {
+            margin: 0;
+            padding-left: 15px;
+        }
+
+        .work-duties li {
+            margin-bottom: 2px;
+        }
+
+        /* 项目经历 */
+        .project-item {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .project-tech {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .project-desc {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .project-desc ul {
+            margin: 0;
+            padding-left: 15px;
+        }
+
+        .project-desc li {
+            margin-bottom: 2px;
+        }
+
+        /* 技能专长 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4px 15px;
+            font-size: 11px;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .skill-content {
+            line-height: 1.4;
+        }
+
+        /* 获奖情况 */
+        .awards-list {
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .awards-list ul {
+            margin: 0;
+            padding-left: 15px;
+        }
+
+        .awards-list li {
+            margin-bottom: 3px;
+        }
+
+        /* 自我评价 */
+        .self-evaluation {
+            font-size: 11px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        @media print {
+            .page {
+                border: none;
+                padding: 0;
+                width: auto;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- 顶部个人信息区，保留照片占位，可替换为真实照片 -->
+        <div class="header-section">
+            <img src="./my.jpg" alt="个人照片" class="photo-placeholder" style="object-fit: cover;" />
+            <div class="personal-info">
+                <div class="name-title">韦克荣｜计算机应用技术</div>
+                <div class="contact-info">
+                    <div>学校：武汉职业技术大学</div>
+                    <div>求职意向：Java后端开发 / 全栈开发</div>
+                    <div>电话：19477838841 | 邮箱：1940221438@qq.com | 所在地：武汉</div>
+                    <div>个人链接：<a href="https://github.com/RCodeTree"
+                            style="text-decoration: none;">https://github.com/RCodeTree</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 求职意向简述 -->
+        <div class="job-intention"><strong>概述：</strong>熟悉 Java 后端开发流程，掌握 Spring Boot、Spring Cloud 基础，能用 Vue3
+            完成基础前端页面与联调；熟悉 MySQL、Linux 与 Docker、Nginx 等基础运维知识，有两个月 C# 后端实习经历，具备良好学习与问题定位能力。</div>
+
+
+        <!-- 教育背景 -->
+        <div class="section-title">教育背景</div>
+        <div class="education-item">
+            <div class="edu-header">
+                <div>武汉职业技术大学｜计算机应用技术</div>
+                <div>毕业时间：2026年6月</div>
+
+            </div>
+            <div class="edu-details">主修方向：软件开发与应用、数据库基础、Web 前后端开发、Linux运维</div>
+            <div class="edu-details">能力概述：面向对象编程、数据库设计、服务端开发与部署、Linux 环境使用</div>
+        </div>
+
+        <!-- 工作/实习经历 -->
+        <div class="section-title">实习经历</div>
+        <div class="work-item">
+            <div class="work-header">
+                <div>后端开发实习生｜字节筑梦（C# 后端）</div>
+                <div>时长：2个月</div>
+            </div>
+            <div class="work-company">工作产出与职责：</div>
+            <div class="work-duties">
+                <ul>
+                    <li>根据需求完成若干接口的增删改查，实现基础的参数校验与异常处理</li>
+                    <li>参与数据库表结构设计与优化，配合解决接口性能瓶颈</li>
+                    <li>与前端联调并编写接口说明，协助排查联调问题</li>
+                    <li>对项目的调度系统进行优化和更新流程，一定基础上实现降本增效</li>
+                    <li>对项目做模块化优化</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 项目经历（按招聘常见模板补充） -->
+        <div class="section-title">项目经历</div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div>基于 Docker 与 Nginx 的项目部署</div>
+                <div>校内实践</div>
+            </div>
+            <div class="project-tech">技术栈：Spring Boot、MySQL、Vue3、Bootstrap5、Docker、Nginx</div>
+            <div class="project-desc">
+                <ul>
+                    <li>负责后端接口与数据库表设计与实现</li>
+                    <li>前端使用 Vue3 简单页面搭建、表单、对话框等交互，配合接口联调</li>
+                    <li>完成 Docker 化镜像构建，使用 Nginx 做静态资源托管与反向代理</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div>HeartHome 心灵之所 - 情感分享社区平台</div>
+                <div>个人项目 | 2024年至今</div>
+            </div>
+            <div class="project-tech">技术栈：Spring Boot 3.4、Vue3、Vite、MySQL、MyBatis、Bootstrap5、Pinia、JWT、Maven多模块</div>
+
+            <div class="project-desc">
+                <ul>
+                    <li><strong>项目架构：</strong>采用前后端分离架构，后端使用Maven多模块管理(heartServer/heartPojo/heartCommon)，实现代码分层和模块化开发
+                    </li>
+                    <li><strong>用户系统：</strong>实现用户注册/登录、JWT身份认证、用户信息管理、头像上传等功能，支持管理员权限控制</li>
+                    <li><strong>作品模块：</strong>设计作品发布系统，支持图片+文字、纯文字、纯图片三种作品类型，实现作品的增删改查和状态管理</li>
+                    <li><strong>数据库设计：</strong>设计用户表、作品表等核心数据模型，合理设置索引优化查询性能，使用约束确保数据完整性</li>
+                    <li><strong>前端技术：</strong>使用Vue3 + Vite构建现代化前端应用，集成Pinia状态管理、Vue Router路由管理、Bootstrap5 UI框架</li>
+                    <li><strong>技术难点：</strong>解决Vue3分层路由匹配问题，处理Maven依赖版本兼容性，实现JWT token认证机制</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 技能特长（按照行业模板分栏） -->
+        <div class="section-title">技能特长</div>
+        <div class="skills-grid">
+            <div class="skill-category">编程语言</div>
+            <div class="skill-content">Java、JavaScript、TypeScript</div>
+
+            <div class="skill-category">后端框架</div>
+            <div class="skill-content">Spring Boot、Spring Cloud（微服务入门）、MyBatis/MyBatis-Plus</div>
+
+            <div class="skill-category">前端与 UI</div>
+            <div class="skill-content">Vue3、组件库 Element Plus/Bootstrap5，能完成常见页面与交互</div>
+
+            <div class="skill-category">工程与平台</div>
+            <div class="skill-content">Docker（镜像/容器）、Linux（常用命令）、Nginx</div>
+        </div>
+
+        <!-- 获奖与证书 -->
+        <div class="section-title">获奖与证书</div>
+        <div class="awards-list">
+            <ul>
+                <li>国家励志奖学金</li>
+                <li>大学英语四级/六级（CET-4/CET-6）</li>
+            </ul>
+        </div>
+
+        <!-- 自我评价（对应图片中的建议，语言简洁、可落地） -->
+        <div class="section-title">自我评价</div>
+        <div class="self-evaluation">
+            学习能力强，动手实践多，能在 Linux 环境下进行开发、部署与排障；熟悉 Java 后端开发与基础的前端联调，注重接口设计、日志与异常处理；沟通顺畅、责任心强，已在实习中积累了跨团队协作经验。
+        </div>
+
+    </div>
+</body>
+
+</html>
