@@ -40,7 +40,6 @@ struct Book GetMaxForBook()
 int main()
 {
 	float total; // 书本总价格
-	float maxPrice; // 书籍价格最大值
 
 
 	printf("=====欢迎来到图书管理系统=====\n");
