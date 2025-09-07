@@ -1,0 +1,12 @@
+// 数组排序：输入10个整数，按升序排列并输出
+#include <stdio.h>
+int main()
+{
+	int index = 0;
+
+	while(index < 10){
+		printf("index的值为：%d\n", index);
+		index++;
+	}
+	return 0;
+}
