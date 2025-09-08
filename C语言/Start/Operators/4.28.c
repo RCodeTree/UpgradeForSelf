@@ -64,6 +64,6 @@ int main()
     int b = 20;
     int c = 0;
     int d = (c = a - 2, a = b + c, c - 3);
-    printf("值为：%d", d);
+    printf("值为：%d", d); // 5
     return 0;
 }
