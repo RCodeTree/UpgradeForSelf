@@ -15,9 +15,9 @@ float GetAvgForBook(float total)
 // 获取最大值
 struct Book GetMaxForBook()
 {
-	 /*
+	 	  /*
            *  获取价格最高的书籍
-          */
+           */
           // 1. 先做升序排序
           for (int i = 0; i < 4; i++)
           {
