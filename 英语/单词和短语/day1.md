@@ -11,7 +11,7 @@ to be/go/travel/live/study abroad 在国外/出国/出国旅行/定居国外/出
 absence n. 缺席，不在
 be absent from... 缺席...
 
-put off 推迟
+put off 推迟;
 set up 建立，安装
 give away 赠送，泄露
 take over 接管，接替
@@ -61,6 +61,7 @@ admission n. 准许加入
 admit to doing sth. 承认做某事
 
 adulthood n. 成年，成人期
+childhood n. 童年，幼年时期
 
 in advance 预先，提前
 advanced technology 先进的技术
