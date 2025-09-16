@@ -103,4 +103,34 @@ ahead of 在...前，先于
 aim at 瞄准，以...为目标
 ```
 
+- ## Page5
+``` bash
+alarm n. 惊恐，惊慌；警报 v. 使惊恐
+a smoke alarm 烟雾警报器
+
+alike adj./adv. 相像；相似
+unlike adj./prep. 不像的，不同的
+dislike v. 不喜欢；厌恶
+
+alive adj. 活着的，有活力的
+lively adj. 活跃的，生气勃勃的
+
+allowance n. 津贴
+allow sb. to do sth. 允许某人做某事
+a piece of... 一份/一片/...
+
+alter v. 改变，修改
+alternative n. 可供选择的事物 adj. 可供替代的
+
+altogether adv. 完全，全部，总共
+
+amaze v. 使吃惊，使惊讶，使惊奇
+amazed adj. 感到惊讶的
+amazing adj. 惊人的，令人惊讶的
+
+amount n. 数量
+amount to v. 总计，共计，等于
+```
+
+
 
