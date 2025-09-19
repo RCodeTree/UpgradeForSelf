@@ -120,3 +120,80 @@ billion num. 十亿
 bind v. 捆绑；捆扎
 bind sb./sth. (to sth.) 把某人/某物捆绑(在某物上)
 ```
+
+## Page15
+``` bash
+bitter adj. 激烈的；痛苦的；味苦的
+bitterness n. 苦味；苦难
+
+blame v. 指责；把...归咎于 n. 责任；责备
+be to blame 应受谴责；应负责任
+blame sb./sth. for sth. 因...责备某人/把...归咎于某物
+
+blind adj. 失明的；盲目的 v. 使失明
+deaf adj. 聋的
+be blind to sth. 对...视而不见
+
+block n. 立方体；街区；障碍物 v. 堵塞；挡住
+blockade n. 封锁
+
+blood n. 血；血统
+bloody adj. 血腥的
+
+blouse n. (女式)短上衣；女式衬衫
+spouse n. 配偶
+
+blow v. 吹；充气；爆炸 n. 猛击；打击
+blow up 炸毁...；充气
+
+board n. 板；木板；董事会
+broad adj. 宽敞的
+bored adj. 无聊的
+
+boiling adj. 沸腾的
+boiled adj. 煮沸的
+
+bold adj. 无畏的；明显的；黑体的
+bald adj. 秃顶的
+bulb n. 灯泡
+
+bomb n. 炸弹 v. 轰炸，投弹
+```
+
+## Page16
+``` bash 
+bone n. 骨头
+stone n. 石头
+
+bother v. 打扰；麻烦 n. 麻烦；困难
+bother doing sth. 费心做某事
+bother to do sth. 费心做某事
+bother sb. about/with sth. 给某人添麻烦
+
+bowl n. 碗
+
+brain drain 人才外流
+brainstorm n./v. 头脑风暴
+
+branch n. 分支；分部；树枝
+brunch n. 早午饭
+brand n. 品牌
+
+breath n. 气息；呼吸
+breathe v. 呼吸
+breathless adj. 喘不过气的
+catch one's breath 喘口气
+out of breath 喘不过来气
+
+brief adj. 简短的
+in brief 简而言之
+
+Britain n. 不列颠；英国
+British adj. 不列颠人的，英国人的
+
+broad adj. 宽广的；广泛的
+abroad adv. 在国外
+
+brush n. 刷子；毛刷；画笔 v. 刷，画
+crush v. 压碎
+```
