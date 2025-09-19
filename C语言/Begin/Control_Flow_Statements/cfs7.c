@@ -4,8 +4,7 @@
 // 递归求阶乘
 int getResult(int n)
 {
-	int result = 1;
-	return result * getResult(n - 1);
+	return n * getResult(n - 1);
 }
 
 int main()
