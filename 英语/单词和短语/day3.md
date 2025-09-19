@@ -52,8 +52,8 @@ ensure v. 保证；确保
 insure v. 给...保险
 assure sb. of sth. 向某人保证某事
 
-atomsphere n. 大气，大气层，气氛，氛围
-pollution of the atomsphere 大气污染
+atmosphere n. 大气，大气层，气氛，氛围
+pollution of the atmosphere 大气污染
 
 attach v. 贴；把...附加...
 attachment n. 附件；依恋
