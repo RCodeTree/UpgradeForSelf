@@ -28,23 +28,23 @@ int main()
 
 	while (true)
 	{
-		if (index < 0 || index > length - 1 || num == arr[index])
+		if ()
 		{
 			break;
 		}
 
-		if (num > arr[index])
+		if ()
 		{
-			index++;
+			
 		}
-		else if (num < arr[index])
+		else if ()
 		{
-			index--;
+			
 		}
 	}
 
 
-	if (num == arr[index])
+	if ()
 	{
 		printf("找到了\n");
 	}
