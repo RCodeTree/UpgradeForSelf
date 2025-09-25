@@ -6,7 +6,9 @@ int main()
 	int num;
 	int arr[] = {1, 34, 43, 3, 53, 2, 5, 12, 4, 20};
 	int length = sizeof(arr) / sizeof (arr[0]);
-	int index = length / 2;
+	int low = 0;
+	int heigh = length - 1;
+	int mid;
 	int result = 0;
 
 	printf("请输入一个整数: ");
@@ -25,35 +27,35 @@ int main()
 		}
 	}
 
+	
 
-	while (true)
+	while (low <= heigh)
 	{
-		if ()
+	
+		mid = (low + heigh) / 2;	
+        
+		if (num > arr[mid])
 		{
+			low = mid + 1;
+		}
+	
+		else if (num < arr[mid])
+		{
+			heigh = mid - 1;
+		}
+		else
+		{
+			printf("找到了\n");
 			break;
 		}
-
-		if ()
-		{
-			
-		}
-		else if ()
-		{
-			
-		}
 	}
 
-
-	if ()
+	if (low > heigh)
 	{
-		printf("找到了\n");
+		printf("没找到\n");
 	}
-	else
-	{
-		 printf("没有该数\n");
-	}
-        
-
 
 	return 0;
 }
+
+
