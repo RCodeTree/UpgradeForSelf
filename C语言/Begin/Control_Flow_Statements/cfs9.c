@@ -1,10 +1,13 @@
 // 二分查找
 #include <stdio.h>
+#include <stdbool.h>
 int main()
 {
 	int num;
 	int arr[] = {1, 34, 43, 3, 53, 2, 5, 12, 4, 20};
 	int length = sizeof(arr) / sizeof (arr[0]);
+	int index = length / 2;
+	int result = 0;
 
 	printf("请输入一个整数: ");
 	scanf("%d", &num);
@@ -23,6 +26,34 @@ int main()
 	}
 
 
+	while (true)
+	{
+		if (index < 0 || index > length - 1 || num == arr[index])
+		{
+			break;
+		}
 
+		if (num > arr[index])
+		{
+			index++;
+		}
+		else if (num < arr[index])
+		{
+			index--;
+		}
+	}
+
+
+	if (num == arr[index])
+	{
+		printf("找到了\n");
+	}
+	else
+	{
+		 printf("没有该数\n");
+	}
+        
+
+
+	return 0;
 }
-
