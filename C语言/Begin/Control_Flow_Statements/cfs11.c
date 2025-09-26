@@ -3,6 +3,11 @@
 #include <string.h>
 int main()
 {
+	/*
+	 * 字符串的比较不能使用 '==' 使用库函数 strcmp(str1, str2)
+	 * 当库函数返回值为 0 时，则表示两个字符串相同
+	 */
+
 	char password[] = "123456";
 	char input[20];
 
