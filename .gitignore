@@ -1,4 +1,5 @@
 *.out
+*.exe
 *.log
 .vscode
 # 忽略以纯数字命名的文件
