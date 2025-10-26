@@ -14,11 +14,7 @@ void reverseStr(char *str, int left, int right)
 	str[left] = str[right];
 	str[right] = temp;
 
-	left++;
-	right--;
-
-
-	return reverseStr(str, left, right);
+	return reverseStr(str, left + 1, right - 1);
 }
 
 
@@ -35,7 +31,9 @@ int main()
 	int left = 0;
 	int right = strlen(str) - 1;
 
-	char reverse[] = reverseStr(str, left, right);
+	reverseStr(str, left, right);
+
+	printf("逆序后的字符串为> %s\n", str);
 
 	return 0;
 }
