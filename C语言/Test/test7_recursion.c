@@ -14,7 +14,10 @@ void reverseStr(char *str, int left, int right)
 	str[left] = str[right];
 	str[right] = temp;
 
-	return reverseStr(str, left + 1, right - 1);
+	left++;
+	right--;
+
+	return reverseStr(str, left, right);
 }
 
 
