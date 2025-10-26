@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 
-char* reverseStr(char *str, int left, int right)
+void reverseStr(char *str, int left, int right)
 {
 
 	if (left > right)
 	{
-		return str;
+		return;
 	}
 
 	char temp = str[left];
