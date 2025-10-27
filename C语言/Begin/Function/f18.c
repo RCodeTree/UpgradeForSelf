@@ -7,9 +7,14 @@ int getNumPow(int num, int count)
 	{
 		return 1;
 	}
-
-	return num * getNumPow(num, count - 1);
-
+	else if(count < 0)
+	{
+		return num * getNumPow(num, -count);
+	}
+	else if(count > 0)
+	{
+		return num * getNumPow(num, count - 1);
+	}
 }
 
 
