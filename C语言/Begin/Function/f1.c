@@ -35,7 +35,7 @@ int main()
 
 	memset(arr, 'x', 3);
 
-	printf("arr的值为：%s\n", arr);
+	printf("arr的值为：%s\n", arr); // xxxlo world
 
 
 
