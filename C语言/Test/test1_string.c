@@ -14,7 +14,7 @@ int main()
 	printf("请输入一个字符串：");
 	scanf("%s", inStr);
 
-	for (int i = strlen(inStr) - 1; i < strlen(inStr); i--) 
+	for (int i = (int)strlen(inStr) - 1; i >= 0; i--) 
 	{
 		outStr[index] = inStr[i];
 		index++;
