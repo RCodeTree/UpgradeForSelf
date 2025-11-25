@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 /*
- * 第一种方法：num1 和 num2 中，最大公约数不会大于这两个数中小的那个数，使用小的那个数如果能同时整除 num1 和 num2 ，则该数为最大公约数
+ * 第一种方法：num1 和 num2 中，最大公约数不会大于这两个数中小的那个数，使用小的那个数做除数，每次小的数减少1，如果 num1 和 num2 能同时整除，则该数为最大公约数
  */
 void getNum(int num1, int num2, int min)
 {
@@ -12,7 +12,7 @@ void getNum(int num1, int num2, int min)
 		if (num1 % min == 0 && num2 % min == 0)
 		{
 			printf("getNum最大公约数为：%d\n", min);
-		       	break;
+		    break;
 		}
 
 		min--;	
