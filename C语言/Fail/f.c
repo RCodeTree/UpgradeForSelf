@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include <string.h>
 int main()
 {
-    if (strlen("abc") - strlen("abcdef") > 0)
+    int m;
+    for(m=1;m<=50;m++)
     {
-        printf(">\n");
+        if(m%12!=0)
+            continue;
+        printf("%4d",m); // 空格空格12空格空格24空格空格36空格空格48
     }
-    else
-    {
-        printf("<\n");
-    }
+    printf("\n");
 
     return 0;
 }

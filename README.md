@@ -58,6 +58,8 @@
   - `Keywords/keywords.md` — 32 个关键字速查：语义、示例与常见误用
   - `Struct/struct.c` — 结构体：定义、初始化、点与箭头操作符访问成员
   - `Variables_and_Constants/son1.c` — 外部变量与全局变量：链接属性与作用域演示
+- Fail（题目收集与错题）
+  - `Fail/Fail.md` — 练习题片段：交替偶数序列求和、Fibonacci 前 12 项之和、居中星号三角形
 - Test（练习与做过的题目）
   - `test1_string.c` — 字符串逆序：临时数组法与原地逆序对比
   - `test2_arr.c` — 冒泡排序：10 个整数升序、交换与趟次优化
@@ -72,7 +74,7 @@
   - `test11_recursion.c` — 数组交换：两个相同大小数组的内容互换
   - `test12_operate.c` — 位运算交换整数：异或技巧、不用临时变量
   - `test13_operate.c` — 统计二进制 1 的个数：位移 + 按位与
-  - `test14_operate.c` — 位运算进阶练习：掩码构造与指定位清零/置位
+  - `test14_operate.c` — 爬台阶计数：递推等价 Fibonacci（`ways(n)=ways(n-1)+ways(n-2)`）
   - `test15_operate.c` — 位运算综合：多位段提取与组合
   - `test16_arr.c` — 数组与地址：下标与指针等价、遍历与边界
   - `test17_char.c` — 字符判定：大小写转换、数字与字母分类
@@ -106,6 +108,8 @@
   - `game/test.c` — 扫雷主程序：菜单与游戏流程控制
   - `game/game.h` — 常量宏、结构体与函数声明
   - `game/game.c` — 游戏核心：初始化、显示、布雷、排雷算法
+  - `test61.c` — 居中等腰三角形打印：空格填充 + 星号数量 `2*i-1`
+  - `test62.c` — 斐波那契前 n 项之和：for 循环迭代，边界 `n<1`、`n==1`
 
 ### 📂 英语
 - 单词与短语：`单词和短语/day1.md`-`day5.md`

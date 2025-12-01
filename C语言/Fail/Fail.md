@@ -106,6 +106,106 @@ int main()
 }
 ```
 
+``` c
+// 结果：6
+#include <stdio.h>
+int main()
+{
+        int m = 5;
+        if(m++ > 5)
+                printf("%d\n", m);
+        else
+                printf("%d\n", m--);
+        return 0;
+}
+```
 
+
+``` 
+以下不正确的 if 语句形式是____。
+A)if (x>y&&x!=y);
+B)if (x==y) x+=y;
+C)if(x!=y) scanf("%d",&x) else scanf("%d",&y);
+D)if(x<y) {x++;y++;}
+```
+
+
+```
+在 C 语言中，表示逻辑“真”值用_______
+```
+
+
+以下程序的运行结果是_______ 。
+``` c
+#include <stdio.h>
+int main()
+{
+    int x,y,z;
+    x=1;y=2;z=3;
+    x=y--<=x||x+y!=z;
+    printf("%d,%d",x,y); // 1,1
+    return 0;
+}
+```
+
+
+``` c
+#include <stdio.h>
+int main()
+{
+	int a = 10, b = 10, i;
+	for(i = 0; a > 8; b = ++i)
+		printf("%d %d ", a--, b); // 10 10 9 1
+	return 0;
+}
+```
+
+
+``` c
+#include <stdio.h>
+void main()
+{ 
+    int k;
+    for(k=0;k<10;k++);
+    printf("%d",k); // 10
+}
+```
+
+
+``` c
+#include <stdio.h>
+int main()
+{
+    int m;
+    for(m=1;m<=50;m++)
+    {
+        if(m%12!=0)
+            continue;
+        printf("%4d",m); // 空格空格12空格空格24空格空格36空格空格48
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+
+```
+输入一个正整数 m，计算 2-4+6-8+10-12+⋯ 的前 m 项之和。
+```
+
+
+```
+求 Fibonacci 数列前 12 项的和。
+```
+
+```
+输出以下三角形：
+    *
+   ***
+  *****
+ *******
+*********
+```
 
 
