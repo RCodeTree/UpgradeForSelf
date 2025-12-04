@@ -9,23 +9,23 @@ f(n) = ( f(n+1) + 1 ) * 2
 边界：f(10) = 1。
 */
 #include <stdio.h>
-int f(int n)
+int f(int day)
 {
-    if(n==10) 
+    if(day==10) 
     {
         return 1;
     }
     else 
     {
-        return (f(n+1)+1)*2;
+        return (f(day+1)+1)*2;
     }
 }
 
 int main()
 {
-    int n=9;
+    int day=9;
 
-    printf("第%d天有%d个桃子。\n",n,f(n));
+    printf("第%d天有%d个桃子。\n",day,f(day)); 
 
     return 0;
 }
