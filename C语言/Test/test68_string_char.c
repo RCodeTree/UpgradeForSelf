@@ -10,11 +10,11 @@ void main()
     {
     	j=0;
     	
-	while(s[k]>=a[j]&&a[j]!='\0') j++;
-    	
-	for(i=strlen(a);i>=j;i--) a[i+1]=a[i];
-    	
-	a[j]=s[k];
+        while(s[k]>=a[j]&&a[j]!='\0') j++;
+            
+        for(i=strlen(a);i>=j;i--) a[i+1]=a[i];
+            
+        a[j]=s[k];
     }
     puts(a);
 }
