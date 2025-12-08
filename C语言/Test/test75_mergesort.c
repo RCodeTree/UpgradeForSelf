@@ -27,11 +27,11 @@ int main()
     }
 
     // 处理剩余元素(可能剩余在arr1或arr2，也可能剩余的不止一个)
-    while(i < len1)
+    while(i < len1 && j >= len2)
     {
         temp[k++] = arr1[i++];
     }
-    while(j < len2)
+    while(j < len2 && i >= len1)
     {
         temp[k++] = arr2[j++];
     }
@@ -41,6 +41,7 @@ int main()
     {
         printf("%d ", temp[i]);
     }
+    printf("\n");
 
     return 0;
 }
