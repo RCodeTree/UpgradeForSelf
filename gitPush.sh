@@ -5,7 +5,7 @@ echo "正在从所有远程仓库拉取最新代码..."
 
 # 拉取GitHub main分支，添加错误处理
 if git pull origin main; then
-    echo "❤❤❤已经从origin/main拉取最新代码❤❤❤"
+    echo "❤ ❤ ❤已经从origin/main拉取最新代码❤ ❤ ❤"
 else
     echo "⚠️ 从origin/main拉取代码失败，脚本停止运行"
     # 睡眠3秒
@@ -15,7 +15,7 @@ fi
 
 # 拉取Gitee master分支，添加错误处理
 if git pull gitee master; then
-    echo "❤❤❤已经从gitee/master拉取最新代码❤❤❤"
+    echo "❤ ❤ ❤已经从gitee/master拉取最新代码❤ ❤ ❤"
 else
     echo "⚠️ 从gitee/master拉取代码失败，脚本停止运行"
     # 睡眠3秒
@@ -50,7 +50,7 @@ if [ "$current_branch" = "main" ]; then # 如果当前分支是main
 
     # 切换回master分支
     git checkout master
-    echo "❤❤❤已经切换回到master分支❤❤❤"
+    echo "❤ ❤ ❤已经切换回到master分支❤ ❤ ❤"
 
 elif [ "$current_branch" = "master" ]; then # 如果当前分支是master
     # 先提交并推送master分支到Gitee
@@ -73,8 +73,8 @@ elif [ "$current_branch" = "master" ]; then # 如果当前分支是master
 
     # 切换回master分支
     git checkout master
-    echo "❤❤❤已经切换回到master分支❤❤❤"
+    echo "❤ ❤ ❤已经切换回到master分支❤ ❤ ❤"
 
 else # 如果当前分支不是main或master，提示错误
-    echo "❤❤❤当前分支不是main或master❤❤❤"
+    echo "❤ ❤ ❤当前分支不是main或master❤ ❤ ❤"
 fi
