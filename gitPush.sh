@@ -2,7 +2,7 @@
 
 # 先清除编译后的可执行文件
 echo "正在清除编译后的可执行文件..."
-rm -f *.exe *.out
+find . -type f \( -name "*.exe" -o -name "*.out" \) -exec rm -f {} +
 
 # 先从各个远程仓库拉取最新代码
 echo "正在从所有远程仓库拉取最新代码..."
