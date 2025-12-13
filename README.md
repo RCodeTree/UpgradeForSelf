@@ -105,14 +105,65 @@
   - `test42_swap.c` — 不借助临时变量交换：算术与位运算的比较
   - `test43_char_scanf.c` — 字符扫描输入：读取、过滤与转换
   - `test44_circle.c` — 圆相关计算：周长、面积与格式化输出
+  - `test45_operator.c` — 基础赋值：变量初始化
+  - `test46_num.c` — 位运算统计：二进制中 1 的个数
+  - `test47_num.c` — 位运算比较：两个数二进制不同的位数
+  - `test48_num.c` — 位运算提取：输出整数的奇偶位
+  - `test49_num.c` — 位运算提取：奇偶位操作练习
+  - `test50_num.md` — 编译行为：自增运算的未定义行为
+  - `test51_num.md` — 变量存储：全局/静态变量默认值
+  - `test52_num.c` — 图形打印：X 形图案
+  - `test53.c` — 逻辑判断：三角形构成与类型判定
+  - `test54_cursor.c` — 指针基础：使用指针遍历数组
+  - `test55_string.c` — 字符串操作：自定义逆序函数
+  - `test56_sum.c` — 数列求和：Sn = a + aa + ...
+  - `test57_sum.c` — 数字特征：水仙花数查找
+  - `test58_sum.c` — 逻辑推理：喝汽水问题（空瓶换购）
+  - `test59_graph.c` — 图形打印：菱形图案
+  - `test60.c` — 逗号表达式：优先级与求值顺序
   - `game/test.c` — 扫雷主程序：菜单与游戏流程控制
   - `game/game.h` — 常量宏、结构体与函数声明
   - `game/game.c` — 游戏核心：初始化、显示、布雷、排雷算法
   - `test61.c` — 居中等腰三角形打印：空格填充 + 星号数量 `2*i-1`
   - `test62.c` — 斐波那契前 n 项之和：for 循环迭代，边界 `n<1`、`n==1`
+  - `test63.c` — 斐波那契数列：数组缓存实现
+  - `test64.c` — 二维数组：定义、初始化与矩阵遍历
+  - `test65_array_map.c` — 内存映射：二维数组的线性存储地址计算
+  - `test66_string.c` — 字符串坑点：赋值与 strcpy 的区别
+  - `test67_string_word.c` — 字符串统计：单词个数计算
+  - `test68_string_char.c` — 数组插入：在有序字符数组中插入新元素
+  - `test69_eat.c` — 逻辑推理：猴子吃桃问题（逆推法）
+  - `test70.c` — 存储类别：static 静态变量的记忆特性
+  - `test71.c` — 算术运算：负数取模规则
+  - `test72.c` — 函数入门：简单的数学函数定义
+  - `test74_num.c` — 数组重排：奇数前移，偶数后移
+  - `test75_mergesort.c` — 排序算法：归并排序
+  - `test76_selectionsort.c` — 排序算法：选择排序
+  - `test77_insertsort.c` — 排序算法：插入排序
+  - `test78_parallelogram.c` — 图形打印：平行四边形
+  - `test79_maxnum.c` — 极值查找：输入序列求最大值
+  - `test80_readchar.c` — 字符流：getchar/putchar 基础
+  - `test81_readchar_str.c` — 字符串交互：简单问答循环
+  - `test82_perfectnumber.c` — 数字特征：完数计算（真因子之和）
+  - `test83.c` — 图形打印：菱形图案通用逻辑
+  - `test84_char.c` — 字符细节：转义字符与 strlen 计算
+  - `test85_numformat.c` — 格式化输出：浮点数宽度与精度
+  - `test86_money.c` — 实际应用：贷款还款计算
+  - `test87.c` — 数值处理：浮点数四舍五入技巧
+
+### 📂 C语言 - Up（进阶）
+- `Cursor/c.md` — 指针阅读：右左法则与复杂声明解析
+- `Cursor/c_arrcursor.c` — 数组指针：指向数组的指针 `int(*)[n]`
+- `Cursor/c_char.c` — 字符指针：字符串常量与内存分布
+- `Cursor/c_cursorarr.c` — 指针数组：存储字符串列表 `char*[]`
+- `Storage/Storage_int.md` — 内存视角：大端与小端存储模式
 
 ### 📂 英语
-- 单词与短语：`单词和短语/day1.md`-`day5.md`
+- 单词与短语：
+  - `单词和短语/day1.md`-`day5.md` — 基础词汇
+  - `单词和短语/improve1.md` — 进阶词汇表
+- 工具：
+  - `convert/` — Markdown 转 HTML 试题格式化工具
 - 语法（之了体系）：
   - `语法/之了/名词.md`、`动词1-实义动词.md`、`动词2-系动词.md`、`形容词.md`、`副词.md`、`代词.md`、`数词.md`、`冠词.md`、`介词.md`、`介词-拓展.md`、`连词.md`、`情态动词的主谓一致.md`、`情态动词的语态.md`
 
@@ -125,8 +176,9 @@
 
 ## 学习进度 📊
 - ✅ C语言：Start 与 Begin 阶段完成
-- ✅ C语言测试：递归、位运算、格式化与输入/输出、数组与项目
-- ✅ 英语：Day1-Day5 词汇与完整语法体系
+- ✅ C语言测试：新增 45-87 题，涵盖排序、位运算、字符串、图形打印等
+- ✅ C语言进阶：新增指针与内存存储（Up 模块）
+- ✅ 英语：基础词汇 Day1-Day5 + 进阶词汇 improve1 + 试题转换工具
 - 📝 计算机基础：待补充
 - ✅ 简历制作：已完成
 - 🎮 项目实践：扫雷多文件工程
