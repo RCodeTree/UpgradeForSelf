@@ -140,3 +140,82 @@ int main()
 # 数组参数、指针参数
 - 数组参数：在函数参数中传递数组时，数组会退化为指针
 - 指针参数：在函数参数中传递指针时，指针会保持指向的地址不变
+- 一级指针存储的是变量的地址
+- 二级指针存储的是一级指针的地址
+``` c
+/* 
+反过来思考，如果函数的参数部分是一级指针，实际参数可以传递什么过来？
+void print(int* p) {}
+int a = 10;
+int* p = &a;
+int arr[10];
+
+print(p);
+print(&a);
+print(arr);
+*/
+// 一级指针传参
+#include <stdio.h>
+void print(int* p, int size)
+{
+	for(int i = 0; i < size; i++)
+	{
+		printf("%d ", p[i]);
+	}
+	printf("\n");
+}
+
+int main()
+{
+	int arr[5] = {1, 2, 3, 4, 5};
+	print(arr, 5); // 1 2 3 4 5
+
+	return 0;
+}
+```
+``` c
+/*
+反过来思考，如果函数的参数部分是二级指针，实际参数可以传递什么过来？
+？？？？
+*/
+// 二级指针传参
+#include <stdio.h>
+void test(int** p)
+{
+	printf("num = %d\n", **p);
+}
+
+int main()
+{
+	int a = 10;
+	int* p = &a;
+	int** pp = &p;
+	int* arr[10];
+
+	test(pp);
+	test(&p);
+	test(arr);
+```
+
+
+# 函数指针 ---- 函数指针是一个指针，指针指向的是一个函数(即指向函数的指针)
+``` c
+#include <stdio.h>
+int add(int a, int b)
+{
+	return a + b;
+}
+
+int main()
+{
+	// 使用 & 和 不使用 & 都可以
+	// int(*p)(int, int) = &add; // 函数指针p指向函数add的地址
+	int(*p)(int, int) = add; // 函数指针p指向函数add的地址
+
+	// 使用 * 和 不使用 * 都可以
+	// printf("%d\n", (*p)(1, 2)); // 3
+	printf("%d\n", p(1, 2)); // 3
+
+	return 0;
+}
+```
