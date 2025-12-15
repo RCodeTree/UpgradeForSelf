@@ -220,3 +220,154 @@ int main()
 	return 0;
 }
 ```
+## 经典例子
+``` c
+#include <stdio.h>
+int main()
+{
+	/* 
+	以下代码是一次函数的调用，调用的是0作为地址处的函数
+	1. 把0强制转换为：无参，返回类型是void的函数的地址
+	2. 调用0地址处的这个函数
+
+	- void(*)() 是函数指针类型
+	- 0 是一个地址，指向的是一个无参数、无返回值的函数
+	- (void(*)())0 是一个强制类型转换，将 0 转换为一个无参数、无返回值的函数指针
+	- *(void(*)())0 是一个解引用操作，将 0 转换为一个无参数、无返回值的函数指针，然后调用该函数
+	*/
+	( *( void(*)() )0 )();
+	return 0;
+}
+```
+``` c
+#include <stdio.h>
+int main()
+{
+	/* 
+	以下代码是一次函数的声明
+	
+	signal 是一个函数，它接受两个参数：
+
+	1. 一个整型 ( int )
+	2. 一个函数指针（指向一个接受 int 返回 void 的函数）
+	并且， signal 函数的返回值也是一个函数指针（指向一个接受 int 返回 void 的函数） ----> 即 void(*)(int)
+	*/
+	void (* signal( int, void(*)(int) ) )(int);
+	return 0;
+}
+```
+
+
+# 函数指针数组
+- 函数指针数组是一个数组，数组的每个元素都是一个函数指针
+- 函数指针数组可以用来存储多个函数的地址
+- 函数指针数组可以用来实现多态
+``` c
+#include <stdio.h>
+int func1(int a)
+{
+	printf("func1: %d\n", a);
+}
+
+int func2(int a)
+{
+	printf("func2: %d\n", a);
+}
+
+int main()
+{
+	int (*pf)(int) = func1;
+	int (*pfarr[])(int) = {func1, func2};
+	for(int i = 0; i < 2; i++)
+	{
+		pfarr[i](i); 
+        /* 
+        result:
+        func1: 0
+        func2: 1
+        */
+	}
+
+	return 0;
+}
+```
+## 函数指针数组的应用场景
+- 函数指针数组可以用来实现多态
+- 函数指针数组可以用来存储多个函数的地址
+- 函数指针数组可以用来实现回调函数
+
+
+# 函数指针数组指针
+- 函数指针数组指针是一个指针，指针指向的是一个函数指针数组
+``` c
+#include <stdio.h>
+int func1(int a)
+{
+	printf("func1: %d\n", a);
+}
+
+int func2(int a)
+{
+	printf("func2: %d\n", a);
+}
+
+int main()
+{
+	int (*pfarr[])(int) = {func1, func2};
+	int (*(*pfarrp)[2])(int) = &pfarr;
+	for(int i = 0; i < 2; i++)
+	{
+		// (*pfarrp)[i](i);
+		(**pfarrp + i)(i); 
+        /* 
+        result:
+        func1: 0
+        func2: 1
+        */
+	}
+	return 0;
+}
+```
+
+
+# 回调函数
+- 经典例子：qsort函数
+- qsort函数的参数：
+    - void* base：指向要排序的数组的第一个元素的指针
+    - size_t num：数组中元素的数量
+    - size_t size：每个元素的大小（以字节为单位）
+    - int (*cmp)(const void* a, const void* b)：比较函数的指针，用于确定元素的顺序  ----> 比较规则(如果第一个参数小于第二个参数，返回一个负数；如果第一个参数大于第二个参数，返回一个正数；如果两个参数相等，返回0)
+- qsort函数的实现：
+    - 1. 对数组进行分区，将数组分为两个部分：小于等于基准值的部分和大于基准值的部分
+    - 2. 对两个部分分别递归调用qsort函数
+- qsort函数的应用场景：
+    - 对数组进行排序
+    - 对结构体数组进行排序
+    - 对自定义类型的数组进行排序
+``` c
+#include <stdio.h>
+#include <stdlib.h>
+
+// 实现qsort函数中cmp函数的比较规则 ---- 即回调函数
+int cmp(const void* a, const void* b)
+{
+	return (*(int*)a - *(int*)b);
+}
+
+int main()
+{
+	int arr[5] = {1, 2, 3, 4, 5};
+	qsort(arr, 5, sizeof(int), cmp);
+	for(int i = 0; i < 5; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+	return 0;
+}
+```
+
+
+# void* 
+- void* 是无具体类型的指针，可以接受任意类型的地址
+- void* 是无具体类型的指针，所以不能解引用操作，也不能进行算术运算
