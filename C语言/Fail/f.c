@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 int main() {
@@ -152,14 +153,201 @@ int main() {
     - **p 得到的是 char 类型（即字符 'J' ）。
     - 如果写 printf("%s", **p) ，那是把字符 'J' 的 ASCII 码值当成了地址传给 %s ，程序会直接崩溃（Segmentation Fault）。
     */
-    char *a[] = {"Pascal", "C Language", "dBase", "Java"};
-    char **p;
-    int j;
-    p = a;
-    p = p + 3;
-    for (j = 3; j >= 0; j--)
-        printf("%s,", *(p--));
+    // char *a[] = {"Pascal", "C Language", "dBase", "Java"};
+    // char **p;
+    // int j;
+    // p = a;
+    // p = p + 3;
+    // for (j = 3; j >= 0; j--)
+    //     printf("%s,", *(p--));
+    // printf("\n");
+
+
+    /*
+    fun:
+    void fun(int b[], int n, int k) {
+        int i, t;
+        for (i = 0; i < k; i++) {
+            t = b[0];
+            for (int j = 0; j < n - 1; j++)
+                b[j] = b[j + 1];
+            b[n - 1] = t;
+        }
+    }
+    */
+
+    /*
+    // while (*(a++) != '\0');这是一个非常经典的 C 语言“陷阱”。关键在于 后置 ++ 的生效时机 。
+    // 第一轮循环：
+    // 1. 当前 a = 100 ( 'H' )。
+    // 2. 执行 *(a++) ：
+    // - 先取值：取到 'H' 。
+    // - 副作用生效 ： a 变为 101 。
+    // 3. 判断 ： 'H' != '\0' ？ 真 。
+    // 4. 继续循环 。 第二轮循环：
+    // 1. 当前 a = 101 ( 'i' )。
+    // 2. 执行 *(a++) ：
+    // - 先取值：取到 'i' 。
+    // - 副作用生效 ： a 变为 102 。
+    // 3. 判断 ： 'i' != '\0' ？ 真 。
+    // 4. 继续循环 。 第三轮循环（关键）：
+    // 1. 当前 a = 102 ( '\0' )。
+    // 2. 执行 *(a++) ：
+    // - 先取值：取到 '\0' 。
+    // - 副作用生效 ： a 变为 103 （这就是为什么它指向了 \0 的后面！）。
+    // 3. 判断 ： '\0' != '\0' ？ 假 。
+    // 4. 退出循环 。
+    // ### 结论
+    // 当循环条件 失败 （遇到 \0 ）从而退出循环时， a++ 这个动作 已经发生过了 。
+
+    // 所以：
+
+    // - 我们取到了 \0 来做判断。
+    // - 但指针 a 已经无情地迈过了 \0 ，指向了它的下一位。
+    
+    sub:
+    void sub(char *a, char b)
+    {
+        while (*(a++) != '\0');
+        while (*(a - 1) < b)
+            *(--a) = *(a - 1);
+        *(a--) = b;
+    }
+
+    main:
+    char s[] = "97531", c;
+    c = '6';
+    sub(s, c);
+    s[6] = '\0';
+    puts(s);
+    */
+
+
+    /*
+    // 将数组循环左移k个元素，结果输出 4 5 6 7 8 1 2 3
+    fun:
+    void fun(int *a, int n, int k)
+    {
+        int i, j, t;
+        for (i = 0; i < k; i++) {
+            t = a[i]; // ①
+            for (j = 3 + i; j > i; j--) a[j - 1] = a[j]; // ②
+            a[n - 1] = t;
+        }
+    }
+
+    main:
+    int b[] = {1, 2, 3, 4, 5, 6, 7, 8}, i;
+    fun(b, 8, 3);
+    for (i = 0; i < 8; i++)
+        printf("%2d", b[i]);
     printf("\n");
+    */
+
+    // 编写一个函数 fun ，它的功能是：
+    // 对一个浮点数数组 d 中的 n 个元素进行查找，返回其中的最大（或最小）元素。
+    // 最终计算 a数组的最大值 和 b数组的最小值 的 差 。
+    /*
+    fun:
+    float fun(float *d, int n, int flag) {
+        float y;
+        int i;
+        y = d[0];
+        for (i = 1; i < n; i++) {
+            if (flag * d[i] > flag * y) y = d[i];
+        }
+        return y;
+    }
+
+
+    main:
+    float a[6] = {3, 5, 9, 4, 2.5f, 1}, b[5] = {3, -2, 6, 9, 1};
+    printf("%.2f\n", fun(a, 6, 1) - fun(b, 5, -1));
+    */
+
+    /*
+    // 查找数组中最大、最小值
+    find:
+    int max, min; // 全局变量
+
+    void find(int *p, int n)
+    {
+        int *q;
+        max = min = *p;
+        for (q = p; q - p < n; q++) {
+            if (*q > max)
+                max = *q;
+            else if (*q < min)
+                min = *q;
+        }
+    }
+
+    main:
+    int i, num[10];
+    printf("Input 10 numbers:\n");
+    for (i = 0; i < 10; i++)
+        scanf("%d", &num[i]);
+    find(num, 10);
+    printf("max=%d,min=%d\n", max, min);
+    */
+
+    // 程序功能：输入一个字符串，然后按照由小到大的顺序进行排序，并删除重复的字符
+    // char str[100], *p, *q, *r, t;
+    // printf("please input a string: ");
+    // gets(str);
+    // for (p = str; *p != '\0'; p++) {
+    //     for (q = p, r = p; *q != '\0'; q++) if (*q < *r) r = q;
+    //     if (r != p) {
+    //         t = *p;
+    //         *p = *r;
+    //         *r = t;
+    //     }
+    // }
+
+    /* 
+    假设 str 为 "aaabbc" 。
+    1. 第一轮外层循环
+    - 初始状态 ： p 指向 str[0] ('a')。
+    - 内层循环 for (q = p; *p == *q; q++); ：
+    - q 从 p 开始往后找。
+    - q 指向 str[0] ('a') -> 相等， q++
+    - q 指向 str[1] ('a') -> 相等， q++
+    - q 指向 str[2] ('a') -> 相等， q++
+    - q 指向 str[3] ('b') -> 不相等 ，循环停止。
+    - 结果 ：此时 p 指向第一个 'a'， q 指向第一个非 'a' 的字符（即 'b'）。
+    - 执行 strcpy(p + 1, q) ：
+    - 把 q 开始的字符串（ "bbc\0" ）拷贝到 p + 1 的位置。
+    - 内存变化 ：
+        - 原： a a a b b c \0
+        - 变： a b b c \0 b c \0 (后面的不管了，字符串以第一个 \0 结束)
+        - 现字符串： "abbc"
+    - 外层循环 p++ ： p 指向下一个字符（现在是 str[1] ，即 'b'）。 2. 第二轮外层循环
+    - 状态 ： p 指向 str[1] ('b')。字符串是 "abbc" 。
+    - 内层循环 ：
+    - q 从 p 开始。
+    - q 指向 'b' -> 相等， q++
+    - q 指向下一个 'b' -> 相等， q++
+    - q 指向 'c' -> 不相等，停。
+    - 执行 strcpy(p + 1, q) ：
+    - 把 q 开始的 "c\0" 拷贝到 p + 1 。
+    - 内存变化 ：
+        - 原： a b b c \0
+        - 变： a b c \0
+        - 现字符串： "abc"
+    - 外层循环 p++ ： p 指向 str[2] ('c')。 3. 第三轮外层循环
+    - 状态 ： p 指向 str[2] ('c')。
+    - 内层循环 ：
+    - q 往后找，发现后面是 \0 ，不相等，停（ q 指向 \0 ）。
+    - 执行 strcpy(p + 1, q) ：
+    - 把 \0 拷贝到 p + 1 。
+    - 字符串还是 "abc" ，没变。
+    */
+    // for (p = str; *p != '\0'; p++) {
+    //     for (q = p; *p == *q; q++);
+    //     strcpy(p + 1, q);
+    // }
+    //
+    // printf("Result: %s\n", str);
 
     return 0;
 }
