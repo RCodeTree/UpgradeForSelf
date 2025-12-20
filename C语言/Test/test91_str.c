@@ -39,6 +39,7 @@ void fun(char s[]) {
         previous++;
         next++;
     }
+    printf("%s\n", s);
     for (int i = 0; i < sum; i++)
         printf("%d ", arr[i]);
     printf("\n");
