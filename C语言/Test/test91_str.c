@@ -19,7 +19,7 @@ void fun(char s[]) {
     }
     s = previous;
     for (int i = 0; i < len - 1; i++)
-        for (int j = 1; j < len - 1 - i; j++)
+        for (int j = 0; j < len - 1 - i; j++)
             if (s[j] > s[j + 1]) {
                 char c = s[j];
                 s[j] = s[j + 1];
