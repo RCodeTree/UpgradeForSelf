@@ -349,5 +349,27 @@ int main() {
     //
     // printf("Result: %s\n", str);
 
+    // printf("%d\n", (int) strlen("ab\xcd\t\\\023")); // 6
+
+    // int m[3][4] = {1, 4, 3, 2, 6, 5, 9, 3, 4, 7, 1, -9};
+    // printf("%d\n", *(*(m + 2) + 2) + 1); // 2
+
+
+    // f:
+    // int b; // 全局变量
+    // void f(int a) {
+    //     int b = 2;
+    //     printf("b=%d,", b);
+    //     b = 3;
+    // }
+    // main:
+    // int a = 100;
+    // f(a);
+    // printf("%d,%d\n", a, b);
+
+    // int a, b;
+    // scanf("%d %d", &a, &b);
+    // printf("%d\n", a > b ? a : b);
+
     return 0;
 }
