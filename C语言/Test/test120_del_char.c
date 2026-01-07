@@ -1,5 +1,9 @@
 #include <stdio.h>
-
+/*
+ * @brief 删除字符串中的指定字符
+ * @param s 字符串指针
+ * @param c 要删除的字符
+ */
 void del(char *s, char c) {
     char *p = s;
     while (*p != '\0') {
