@@ -5,15 +5,14 @@
  */
 int Mystery(char *p1, char *p2) {
     int count = 0;
-    char *p = p1, *q = p2;
-    while (*p) p++;
-    while (*q) {
-        *p = *q;
-        p++;
-        q++;
+    while (*p2) {
+        *p1 = *p2;
+        p1++;
+        p2++;
         count++;
     }
-    *p = '\0';
+    *p1 = '\0';
+
     return count;
 }
 
