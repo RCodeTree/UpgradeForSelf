@@ -12,7 +12,7 @@ void getNum(int num1, int num2, int min)
 		if (num1 % min == 0 && num2 % min == 0)
 		{
 			printf("getNum最大公约数为：%d\n", min);
-		    break;
+		    break;      
 		}
 
 		min--;	
