@@ -1,28 +1,42 @@
-// 递归实现：求阶乘
-// !3 = 3 * 2 * 1
+// 递归实现：字符串逆序
 #include <stdio.h>
+#include <string.h>
 
-int calculate(int num)
+void reverseStr(char *str, int left, int right)
 {
-	if(num == 0)
+
+	if (left > right)
 	{
-		return 1;
+		return;
 	}
 
-	return num * calculate(num - 1);
+	char temp = str[left];
+	str[left] = str[right];
+	str[right] = temp;
+
+	left++;
+	right--;
+
+	return reverseStr(str, left, right);
 }
+
+
+
+
 
 int main()
 {
-	int num;
+	char str[100];
 
-	printf("请输入一个整数> ");
-	scanf("%d", &num);
+	printf("请输入一个字符串> ");
+	scanf("%s", str);
 
-	int result = calculate(num);
+	int left = 0;
+	int right = strlen(str) - 1;
 
-	printf(" %d 的阶乘为> %d\n", num, result);
+	reverseStr(str, left, right);
+
+	printf("逆序后的字符串为> %s\n", str);
 
 	return 0;
 }
-

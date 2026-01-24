@@ -1,55 +1,40 @@
-// 递归实现：字符串逆序
+// 交换数组：将数组A的内容和数组B的内容进行交换(数组一样大)
 #include <stdio.h>
-#include <string.h>
 
-// 求字符串长度
-int getStrlen(char *str)
+void swapArr(int *arr1, int *arr2)
 {
-	if (*str != '\0')
+	int temp[3];
+
+	for(int i = 0; i < sizeof(temp) / sizeof(temp[0]); i++)
 	{
-		return 1 + getStrlen(str + 1); // 递归调用，每次调用时，str指针向后移动一位
+		temp[i] = arr1[i];
+		arr1[i] = arr2[i];
+		arr2[i] = temp[i];
 	}
-	return 0;
 }
-
-
-// 实现字符串逆序
-void reverseStr(char *str)
-{
-	// 先将第一个元素存起来
-	char temp = *str;
-
-	// 将最后一个元素放到第一个的位置
-	int len = getStrlen(str);
-	*str = *(str + len - 1);
-
-	// 将最后一个变为 \0 ----> 保证每次递归交换的是中间剩余的首尾两个字符
-	*(str + len - 1) = '\0';
-	
-	// 先使用递归将中间剩余的字符交换
-        if(getStrlen(str + 1) >= 2)
-	{
-		reverseStr(str + 1);
-	}
-
-	// 最后将最后一个元素改为当时存起来的第一个元素，相对于每一次递归
-	*(str + len - 1) = temp;
-}
-
 
 int main()
 {
-	char str[100];
+	int arr1[] = {1, 2, 3};
+	int arr2[] = {4, 5, 6};
 
-	printf("请输入一个字符串> ");
-	scanf("%s", str);
+	for(int i = 0; i < sizeof(arr1) / sizeof(arr1[0]); i++)
+	{
+		printf("交换前 arr1[%d] 的值为：%d\n", i, arr1[i]);
+		printf("交换前 arr2[%d] 的值为：%d\n", i, arr2[i]);
+	}
 
-	reverseStr(str);
+	printf("-----------------------------------------------\n");
 
-	printf("逆序后的字符串为> %s\n", str);
+	swapArr(arr1, arr2);
 
-//	int len = getStrlen(str);
-//	printf("%d\n", len);
+	for(int i = 0; i < sizeof(arr1) / sizeof(arr1[0]); i++)
+	{
+		printf("交换后 arr1[%d] 的值为：%d\n", i, arr1[i]);
+		printf("交换后 arr2[%d] 的值为：%d\n", i, arr2[i]);
+	}
 
 	return 0;
 }
+
+
