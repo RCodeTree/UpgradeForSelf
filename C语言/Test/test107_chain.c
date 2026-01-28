@@ -31,7 +31,7 @@ struct Node* contracte(struct Node* n1, struct Node* n2)
 {
 	struct Node* t1 = n1;
 	struct Node* t2 = n2;
-	while (t1 != NULL) t1 = t1 -> next;
+	while (t1 -> next != NULL) t1 = t1 -> next;
 	t1 -> next = t2;
 	printNodeData(n1);
 	return n1;
