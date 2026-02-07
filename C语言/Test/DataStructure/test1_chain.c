@@ -69,8 +69,8 @@ struct Node* removeNode(struct Node* head, int removeForData)
 		if (head -> next -> data == removeForData)
 		{
 			struct Node* tmp = head -> next -> next;
-			head = tmp;
-			head -> next = NULL;
+			head -> next = tmp;
+			tmp = NULL;
 			break;
 		}
 		head = head -> next;
