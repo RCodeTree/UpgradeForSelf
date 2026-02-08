@@ -44,7 +44,18 @@ struct Node* insertNode(struct Node* head, struct Node* node, int insertForData)
 	}
 	while (head -> next != NULL)
 	{
-		if (head -> next -> data == insertForData)
+		if (head -> next -> data == insertForData) // 在链表的链子内部某个节点后插入新节点
+		{
+			/*
+			 在节点前面插入(头插入)：head -> next
+			 在节点后面插入(尾插入)：head -> next -> next
+			 */
+			struct Node* tmp = head -> next -> next;
+			node -> next = tmp;
+			head -> next -> next = node;
+			break;
+		}
+		else if(head -> data == insertForData) // 在链表的头节点的后插入新节点
 		{
 			struct Node* tmp = head -> next;
 			node -> next = tmp;
@@ -66,12 +77,18 @@ struct Node* removeNode(struct Node* head, int removeForData)
 	}
 	while (head -> next != NULL)
 	{
-		if (head -> next -> data == removeForData)
+		if (head -> next -> data == removeForData) // 删除链表的链子内部某个节点
 		{
 			struct Node* tmp = head -> next -> next;
 			head -> next = tmp;
 			tmp = NULL;
 			break;
+		}
+		else if (head -> data == removeForData) // 删除链表头节点
+		{
+			struct Node* tmp = head -> next;
+			h = tmp;
+			tmp = NULL;
 		}
 		head = head -> next;
 	}
