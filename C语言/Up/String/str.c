@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
+    /*
     char *p = "abc"; // 字符串常量不能被修改
     char q[] = "abc";
     printf("%s\n", p);
@@ -10,5 +12,19 @@ int main() {
     *q = 'd'; // 或者 q[0] = 'd';
     printf("%s\n", p);
     printf("%s\n", q);
+    */
+
+    int a[] = {1, 2, 3, 4, 5};
+    int b[10] = {0};
+
+    memcpy(b, a, 12);
+    for (int i = 0; i < 5; i++)
+        printf("%d ", b[i]);
+    printf("\n");
+    for (int i = 0; i < 10; i++)
+        printf("%d ", b[i]);
+    printf("\n");
+
+
     return 0;
 }

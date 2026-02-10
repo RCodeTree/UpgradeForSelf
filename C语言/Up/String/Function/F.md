@@ -1,12 +1,19 @@
 ### 字符串函数
 
 - strlen(str) 计算字符串长度, str 为字符串, 返回值为size_t类型(无符号整数类型), 表示字符串的长度(不包括'\0')
-- strcpy(dest, src) 复制字符串(包括'\0'), dest 为目标字符串, src 为源字符串, 复制的是 src 字符串到 dest 字符串的末尾, 并在末尾添加 '\0'
-- strcat(str, catStr) 连接字符串, str 为目标字符串, catStr 为源字符串, 连接的是 catStr 字符串到 str 的末尾, 并在末尾添加 '\0'
-- strcmp(str1, str2) 比较字符串(返回值为int类型, 相等返回0, 不相等返回非0值, 比较的是字符串的每个字符的ASCII码值), str1 为源字符串, str2 为子字符串, 比较的是 str1 字符串和 str2 字符串的每个字符的 ASCII 码值, 如果相等, 则返回 0, 否则返回非 0 值.
-- strstr(str1, str2) 查找子字符串(返回值为char*类型, 找到返回子字符串的地址, 未找到返回NULL), str1 为源字符串, str2 为子字符串, 查找的是 str1 中第一次出现 str2 的位置, 并返回该位置的地址, 如果未找到, 则返回 NULL.
-- strtok(str, delimiters) 字符串分割函数, str 为源字符串, delimiters 为分隔符字符串, 用于将 str 字符串按照 delimiters 中的字符进行分割, 并返回分割后的子字符串的地址. 每次调用 strtok 函数时, 都从上次调用结束的位置开始分割, 直到分割完成.
-- memcpy(void* dest, const void* src, size_t num) 内存复制函数, dest 为目标内存地址, src 为源内存地址, num 为要复制的字节数, 用于将 src 内存中的数据复制到 dest 内存中, 并返回 dest 内存地址.
+- strcpy(dest, src) 复制字符串(包括'\0'), dest 为目标字符串, src 为源字符串, 复制的是 src 字符串到 dest 字符串的末尾,
+  并在末尾添加 '\0'
+- strcat(str, catStr) 连接字符串, str 为目标字符串, catStr 为源字符串, 连接的是 catStr 字符串到 str 的末尾,
+  并在末尾添加 '\0'
+- strcmp(str1, str2) 比较字符串(返回值为int类型, 相等返回0, 不相等返回非0值, 比较的是字符串的每个字符的ASCII码值), str1
+  为源字符串, str2 为子字符串, 比较的是 str1 字符串和 str2 字符串的每个字符的 ASCII 码值, 如果相等, 则返回 0, 否则返回非
+  0 值.
+- strstr(str1, str2) 查找子字符串(返回值为char*类型, 找到返回子字符串的地址, 未找到返回NULL), str1 为源字符串, str2
+  为子字符串, 查找的是 str1 中第一次出现 str2 的位置, 并返回该位置的地址, 如果未找到, 则返回 NULL.
+- strtok(str, delimiters) 字符串分割函数, str 为源字符串, delimiters 为分隔符字符串, 用于将 str 字符串按照 delimiters
+  中的字符进行分割, 并返回分割后的子字符串的地址. 每次调用 strtok 函数时, 都从上次调用结束的位置开始分割, 直到分割完成.
+- memcpy(void* dest, const void* src, size_t num) 内存复制函数, dest 为目标内存地址, src 为源内存地址, num 为要复制的字节数,
+  用于将 src 内存中的数据复制到 dest 内存中, 并返回 dest 内存地址. 并且memcpy函数只是对两块单独的内存进行复制, 不能对自身进行复制.
 
 ### 以下是对各个函数的自我实现
 
@@ -80,5 +87,49 @@ int my_strcmp(char* str1, char* str2)
         str2++;
     }
     return *str1 - *str2; // 不相等时, 返回的是两个字符的ASCII码值的差
+}
+```
+
+#### strstr
+
+``` c
+#include <stdio.h>
+char* my_strstr(const char* str1, const char* str2)
+{
+    const char* s1 = str1;
+    const char* s2 = str2;
+    const char* p = str1;
+    while(*p)
+    {
+            s1 = p;
+            s2 = str2;
+            while (*s1 && *s2 && *s1 == *s2)
+            {
+                s1++;
+                s2++;
+            }
+            if (*s2 == '\0')
+            {
+                return (char*)p;
+            }
+            p++;
+    }
+    return NULL;
+}
+```
+
+#### memcpy
+
+``` c
+#include <stdio.h>
+void* my_memcpy(void* dest, const void* src, size_t num)
+{
+    char* pdest = (char*)dest;
+    const char* psrc = (const char*)src;
+    while (num--)
+    {
+        *pdest++ = *psrc++;
+    }
+    return dest;
 }
 ```
