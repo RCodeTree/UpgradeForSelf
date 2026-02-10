@@ -63,7 +63,10 @@ DynamicArr* removeStudent(DynamicArr* arr, char* id)
 		if (strcmp(arr -> array[i].id, id) == 0)
 		{
 			for (int j = i; j < (arr -> len - 1); j++)
-				arr -> array[i] =  arr -> array[i + 1];
+				arr -> array[j] =  arr -> array[j + 1];
+			arr -> len--;
+			arr -> capacity--;
+			break;
 		}
 	}
 	return a;
@@ -77,9 +80,9 @@ DynamicArr* sortStudent(DynamicArr* arr)
 		for (int j = 0; j < (arr -> len - 1 - i); j++)
 			if (arr -> array[j].score < arr -> array[j + 1].score)
 			{
-				float tmp = arr -> array[j].score;
-				arr -> array[j].score = arr -> array[j + 1].score;
-				arr -> array[j + 1].score = tmp;
+				struct Student tmp = arr -> array[j];
+				arr -> array[j] = arr -> array[j + 1];
+				arr -> array[j + 1] = tmp;
 			}
 	return a;
 }
@@ -89,28 +92,43 @@ void printStudent(DynamicArr* arr)
 	assert(arr != NULL);
 	for (int i = 0; i < arr -> len; i++)
 		printf("学生信息 => 学号：%s，姓名：%s，成绩：%f\n", arr -> array[i].id, arr -> array[i].name, arr -> array[i].score);
+	printf("len: %d, capacity: %d\n", arr -> len, arr -> capacity);
+	printf("---------------------------------\n");
 }
 
 int main()
 {
+	// 初始化动态数组
 	int size;
 	printf("请输入动态数组的初始容量：");
 	scanf("%d", &size);
 	DynamicArr* arr = createArr(size);
 
-	struct Student s1 = {"001", "张三", 90.0};
-	struct Student s2 = {"002", "李四", 80.0};
-	addStudent(arr, &s2);
+	// 添加学生信息
+	struct Student s1 = {"001", "张三", 80.0};
+	struct Student s2 = {"002", "李四", 90.0};
+	struct Student s3 = {"003", "王五", 70.0};
 	addStudent(arr, &s1);
+	addStudent(arr, &s2);
+	addStudent(arr, &s3);
+	printf("添加学生信息后, 未排序：\n");
+	printStudent(arr);
 
+	// 排序学生信息
+	DynamicArr* arr_sorted = sortStudent(arr);
+	printf("排序学生信息后, 按成绩从高到低排序：\n");
+	printStudent(arr_sorted);
+
+	// 查询学生信息
 	char id[100];
 	printf("请输入要查询的学号：");
 	scanf("%s", id);
-	queryStudent(arr, id);
+	queryStudent(arr_sorted, id);
 
-	printf("删除学号为 %s 的学生信息\n", id);
-	removeStudent(arr, id);
-	printStudent(arr);
+	// 删除学生信息
+	printf("删除学号为 %s\n", id);
+	removeStudent(arr_sorted, id);
+	printStudent(arr_sorted);
 
 	free(arr);
 	return 0;
