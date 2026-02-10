@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * 找到字符串数组中每个字符串的ASCII码之和最大的字符串
+ * @return 0
+ */
 int main() {
     char str[3][10] = {"abcd", "abqe", "abed"};
     int len = strlen(str[0]);
