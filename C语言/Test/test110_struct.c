@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,6 +28,8 @@ DynamicArr* createArr(int size)
 
 void addStudent(DynamicArr* arr, struct Student* s)
 {
+	assert(arr != NULL);
+	assert(s != NULL);
 	if (arr -> len == arr -> capacity)
 	{
 		arr -> capacity *= 2;
@@ -37,6 +40,8 @@ void addStudent(DynamicArr* arr, struct Student* s)
 
 void queryStudent(DynamicArr* arr, char* id)
 {
+	assert(arr != NULL);
+	assert(id != NULL);
 	for (int i = 0; i < arr -> len; i++)
 	{
 		if (strcmp(arr -> array[i].id, id) == 0)
@@ -50,6 +55,8 @@ void queryStudent(DynamicArr* arr, char* id)
 
 DynamicArr* removeStudent(DynamicArr* arr, char* id)
 {
+	assert(arr != NULL);
+	assert(id != NULL);
 	DynamicArr* a = arr;
 	for (int i = 0; i < arr -> len; i++)
 	{
@@ -64,6 +71,7 @@ DynamicArr* removeStudent(DynamicArr* arr, char* id)
 
 DynamicArr* sortStudent(DynamicArr* arr)
 {
+	assert(arr != NULL);
 	DynamicArr* a = arr;
 	for (int i = 0; i < (arr -> len - 1); i++)
 		for (int j = 0; j < (arr -> len - 1 - i); j++)
@@ -78,6 +86,7 @@ DynamicArr* sortStudent(DynamicArr* arr)
 
 void printStudent(DynamicArr* arr)
 {
+	assert(arr != NULL);
 	for (int i = 0; i < arr -> len; i++)
 		printf("学生信息 => 学号：%s，姓名：%s，成绩：%f\n", arr -> array[i].id, arr -> array[i].name, arr -> array[i].score);
 }
@@ -103,6 +112,7 @@ int main()
 	removeStudent(arr, id);
 	printStudent(arr);
 
+	free(arr);
 	return 0;
 }
 
