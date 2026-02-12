@@ -14,17 +14,6 @@ int main() {
     printf("%s\n", q);
     */
 
-    int a[] = {1, 2, 3, 4, 5};
-    int b[10] = {0};
-
-    memcpy(b, a, 12);
-    for (int i = 0; i < 5; i++)
-        printf("%d ", b[i]);
-    printf("\n");
-    for (int i = 0; i < 10; i++)
-        printf("%d ", b[i]);
-    printf("\n");
-
 
     return 0;
 }
