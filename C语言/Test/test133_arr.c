@@ -7,7 +7,7 @@ int main() {
         for (int j = 0; j < 5; j++)
             a[i][j] = n++;
     for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < i; j++)
             printf("%d\t", a[i][j]);
         printf("\n");
     }
