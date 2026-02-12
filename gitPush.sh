@@ -28,7 +28,24 @@ else
 fi
 
 # 获取用户提交信息
-read -p "请输入提交信息：" commit_message
+echo "请输入提交信息（输入单独一行 '.' 保存并结束）："
+commit_message=""
+while IFS= read -r line; do
+    if [ "$line" == "." ]; then
+        break
+    fi
+    if [ -z "$commit_message" ]; then
+        commit_message="$line"
+    else
+        commit_message="${commit_message}
+${line}"
+    fi
+done
+
+if [ -z "$commit_message" ]; then
+    echo "提交信息不能为空！脚本停止运行。"
+    exit 1
+fi
 
 # 获取当前分支
 current_branch=$(git branch --show-current)
