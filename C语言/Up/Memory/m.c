@@ -47,5 +47,27 @@ int main() {
     for (int i = 0; i < 5; i++)
         printf("%d ", a[i]);
     printf("\n");
+
+
+    printf("---------------------------------\n");
+
+
+    int c[3] = {1, 2, 3};
+    int d[3] = {1, 2, 3};
+    int e[3] = {1, 3, 2};
+    int result1 = memcmp(c, e, sizeof(int) * 3);
+    int result2 = memcmp(c, d, sizeof(int) * 3);
+    printf("result1: %d\n", result1);
+    printf("result2: %d\n", result2);
+
+    char f[] = "hello world";
+    memset(f, 'x', sizeof(char) * 3);
+    for (int i = 0; i < strlen(f); i++) printf("%c ", f[i]);
+    printf("\n");
+
+    int g[3];
+    memset(g, 1, sizeof(int) * 3); // 由于memset将内存设置为字节单位，所以这里每个int都被设置为0x01010101, 由此每一个元素的十进制是16843009
+    for (int i = 0; i < 3; i++) printf("%d ", g[i]);
+    printf("\n");
     return 0;
 }
