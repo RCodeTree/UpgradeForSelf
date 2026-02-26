@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 多种情况下的插入新节点的方式，节点前插入新节点；节点后插入新节点
+/*if (head->next->data == insertForData) // 在链表的链子内部某个节点后插入新节点
+        {
+            /*
+             在节点前面插入(头插入)：head -> next
+             在节点后面插入(尾插入)：head -> next -> next
+             #1#
+            struct Node* tmp = head->next->next;
+            node->next = tmp;
+            head->next->next = node;
+            break;
+        }
+*/
+
 struct Node
 {
     int data;
@@ -42,20 +56,9 @@ struct Node* insertNode(struct Node* head, struct Node* node, int insertForData)
         printf("头节点或节点不存在\n");
         return NULL;
     }
-    while (head->next != NULL)
+    while (head != NULL)
     {
-        if (head->next->data == insertForData) // 在链表的链子内部某个节点后插入新节点
-        {
-            /*
-             在节点前面插入(头插入)：head -> next
-             在节点后面插入(尾插入)：head -> next -> next
-             */
-            struct Node* tmp = head->next->next;
-            node->next = tmp;
-            head->next->next = node;
-            break;
-        }
-        else if (head->data == insertForData) // 在链表的头节点的后插入新节点
+        if (head->data == insertForData) // 在链表的头节点的后插入新节点；在链表的任何位置插入新节点(除了头节点之前)
         {
             struct Node* tmp = head->next;
             node->next = tmp;
