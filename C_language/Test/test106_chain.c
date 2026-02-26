@@ -1,18 +1,22 @@
 #include <stdio.h>
 
-struct Node {
+struct Node
+{
     int data;
-    struct Node *next;
+    struct Node* next;
 };
 
-void fun(struct Node *n) {
-    while (n != NULL) {
+void fun(struct Node* n)
+{
+    while (n != NULL)
+    {
         printf("%d\n", n->data);
         n = n->next;
     }
 }
 
-void main() {
+void main()
+{
     struct Node n1 = {1, NULL}, n2 = {2, NULL}, n3 = {3, NULL};
     n1.next = &n2;
     n2.next = &n3;
