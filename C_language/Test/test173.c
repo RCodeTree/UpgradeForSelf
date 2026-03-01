@@ -4,6 +4,17 @@
 
 #define N 6
 
+int string_length(char* str)
+{
+    char* p = str;
+    int len = 0;
+    while (*p)
+    {
+        len++;
+        p++;
+    }
+    return len;
+}
 
 int main()
 {
@@ -26,24 +37,24 @@ int main()
     //     if (flag) printf("%d ", a[i]);
     // }
     // printf("\n");
-    int a[N] = {2, 4, 6, 8, 10, 12};
-    for (int i = 0; i < N; i++)
-    {
-        int flag = 0; // 标记是否存在其他元素能整除a[i]
-        for (int j = 0; j < N; j++)
-        {
-            if (j != i && a[i] % a[j] == 0)
-            {
-                flag = 1;
-                break;
-            }
-        }
-        if (flag)
-        {
-            printf("%d ", a[i]);
-        }
-    }
-    printf("\n");
+    // int a[N] = {2, 4, 6, 8, 10, 12};
+    // for (int i = 0; i < N; i++)
+    // {
+    //     int flag = 0; // 标记是否存在其他元素能整除a[i]
+    //     for (int j = 0; j < N; j++)
+    //     {
+    //         if (j != i && a[i] % a[j] == 0)
+    //         {
+    //             flag = 1;
+    //             break;
+    //         }
+    //     }
+    //     if (flag)
+    //     {
+    //         printf("%d ", a[i]);
+    //     }
+    // }
+    // printf("\n");
 
 
     // 7  输入两个数组（数组元素个数自定），输出在两个数组中都出现的元素（如a[5]={2,3,4,5,6}，b[6]={3,5,7,9,10,-1}，则输出3、5）
@@ -164,6 +175,67 @@ int main()
     }
     printf("%s\n", s);
     free(s);*/
-    return
-        0;
+
+
+    // int x = 10;
+    // x += x -= x * x;
+    // printf("%d\n", x);
+
+
+    // char str[] = "China";
+    // char* p = str;
+    // while (*p != '\0')
+    // {
+    //     printf("%c", *p + 1);
+    //     p++;
+    // }
+    // printf("\n");
+
+
+    //  输入一个3*3的矩阵，输出主对角线元素之和
+    // int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    // int i, j, sum = 0;
+    // for (i = 0; i < 3; i++)
+    // {
+    //     for (j = 0; j < 3; j++)
+    //     {
+    //         if (i == j)
+    //         {
+    //             sum += a[i][j];
+    //         }
+    //     }
+    // }
+    // printf("%d\n", sum);
+
+
+    // int arr[5] = {2, 4, 6, 8, 10};
+    // int* p;
+    // for (p = arr; p < &arr[5]; p++) // &arr[5] 或 arr + 5
+    // {
+    //     printf("%d ", *p);
+    // }
+
+
+    // int n;
+    // int min = 0, max = 0;
+    // for (int i = 1; i <= 10; i++)
+    // {
+    //     scanf("%d", &n);
+    //     if (n < min) min = n;
+    //     if (n > max) max = n;
+    // }
+    // printf("min = %d, max = %d\n", min, max);
+
+
+    // char str[100];
+    // printf("请输入一个字符串：");
+    // gets(str);
+    // int l = string_length(str);
+    // printf("字符串的长度为：%d\n", l);
+
+
+    int a = 7, b = 9, t;
+    t = a > b ? a : b;
+    printf("%d", t);
+    return 0;
 }
