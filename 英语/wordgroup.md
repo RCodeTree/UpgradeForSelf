@@ -3,6 +3,14 @@ take off 起飞；脱下；飞黄腾达
 take up 占用(时间/空间)；着手开始
 take action/measuers/steps to do sth. 采取措施做某事
 take advantage of 利用，使用
+take after 与...相像
+take in 吸收，吸入，理解，领会
+take over 接管
+take away 拿走
+take down 写下，记下
+take out 拿出，取出
+
+take bus 乘公交车
 
 look through 翻阅
 look after 照顾
@@ -30,8 +38,8 @@ be seated in 坐在...里
 
 make a difference 有影响
 make no difference 没有影响
-make sense 有意义
-make no sense 毫无意义
+make sense 有意义，有道理
+make no sense 毫无意义，毫无道理
 make mistakes 犯错
 make a mistake 犯错
 make up one's mind to do 下定决心做某事
@@ -65,6 +73,9 @@ turn to 求助
 
 pay for 支付 
 pay off 还清(债务)
+
+thanks to 多亏.....
+thanks for doing 感谢....
 
 in return 作为回报
 in turn 轮流，依次
@@ -122,20 +133,28 @@ cut down 削弱，减少
 cut up 切碎
 cut across 抄近道
 
+dress up 盛装打扮，盛装出席
+dress up as 打扮成....
+
 achieve one's goals 完成某人的目标
 achieve/realize one's dream 完成某人的梦想
+
+prefer doing A to (doing) B 愿意做A不愿意做B
+prefer to do A rather than do B 宁愿做A也不愿做B
 
 hang out 外出，闲逛
 
 cheer oneself up 给某人打气
+
+pass by 经过
 
 be used to do 被用来...
 used to do 过去常常做...
 be/get used to doing 习惯做某事
 be good/skilled at doing 习惯做某事 
 
-be famous/known for 
-be famous/known as
+be famous/known for 因...而出名/被熟知
+be famous/known as 作为...而出名/被熟知
 
 take control of 控制
 out of control 失控
@@ -177,7 +196,7 @@ long for 渴望
 
 sb. would appreciate it if... 某人将感激不敬，如果....
 
-be ready to do 
+be ready to do 准备做某事
 
 be different from 与...不一样
 
@@ -193,15 +212,17 @@ be divided into 被分为...
 
 be angry with sb. 生某人的气
 
+be absent from 缺席
+
 a chance to do ...的机会
 
 ever since then 自那时起
 
 When it comes to... 当提及...时
 
-How about doing sth. 做某事怎么样
+How about doing sth .....? 做某事怎么样
 
-
+What about doing ......? .....怎么样?
 
 ```
 
