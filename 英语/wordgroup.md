@@ -1,5 +1,7 @@
-​```english
+```english
 take off 起飞；脱下；飞黄腾达
+take care 小心，保重
+take care of 照顾
 take up 占用(时间/空间)；着手开始
 take action/measuers/steps to do sth. 采取措施做某事
 take advantage of 利用，使用
@@ -15,6 +17,7 @@ take a break/rest 休息
 take a nap 打盹，小睡一会儿
 take a bath/shower 洗澡
 take bus 乘公交车
+take one's call 接某人的电话
 
 look through 翻阅
 look after 照顾
@@ -34,6 +37,9 @@ look back 回首
 look forward to doing 期待 
 look into 调查；研究
 
+watch out 小心，当心
+watch over 关注，监视
+
 reflect on 反思
 
 sit on 坐在...上
@@ -41,6 +47,7 @@ sit in 坐在...里
 be seated on 坐在...上
 be seated in 坐在...里
 
+make out 弄清楚，看得清
 make a difference 有影响
 make no difference 没有影响
 make sense 有意义，有道理
@@ -71,19 +78,24 @@ keep a diary 写日记
 keep active 保持积极
 keep a balance between A and B 在A和B之间保持平衡
 keep up with 保持
+keep sb. away from 让某人远离....  -----> be away from 远离.....
 
 fall down 跌倒
 fall off 摔落
 fall asleep 睡着
+fall behind 落后
 fall in love with sb. 爱上某人
 
 get up 起床
 get on 上(车等)
 get off 下(车等)
 get into 进入
+get across 使...理解
 get through 通过，完成，熬过来
 get on/along with ...的进展，与...相处得好 
 get in touch/contact with 与...取得联系 
+get into the habit of 养成...的习惯
+get/be close to 靠近
 
 learn about 了解
 learn from 从...中学习
@@ -103,6 +115,8 @@ turn around 转身
 pay for 支付 
 pay off 还清(债务)
 pay back 偿还
+pay attention to 关注，注意
+pay a visit to 拜访
 
 thanks to 多亏.....
 thanks for doing 感谢....
@@ -122,6 +136,20 @@ in common 共同之处
 in terms of 在...方面，就...而言
 in person 亲身
 in a hurry 匆忙地
+in general 通常来说，一般的
+in need 有需求的
+in front of 在...面前
+in memory of 为了纪念...
+in honor of 为了纪念...
+in the end 最终，最后
+
+on one's own 靠某人自己
+(be) on fire 着火
+on business 出差
+
+for a while 一会儿
+for free 免费
+for fun 为了好玩
 
 after all 毕竟
 after graduation 毕业后
@@ -129,9 +157,11 @@ after graduating 毕业后
 
 by accident 意外地，偶然地
 by chance 偶然地
+by mistake 不小心弄错
+by the way 顺便
 
 date back to... 追溯到...
-date 
+date from 起源于....
 
 under pressure 有压力，处于压力之下
 under control 在掌控之中
@@ -145,6 +175,8 @@ have a cold 感冒
 have a rest 休息
 have a good time 玩得开心
 have to do with 与...有关
+have no idea 不知道
+have a announcement to make 有一个通知要宣布
 
 catch a cold 感冒
 catch up with 跟上，追上
@@ -159,9 +191,15 @@ break off 中止，突然中止，脱落
 
 as if 似乎，好像
 as though 似乎，好像
+as a result 结果
+as a result of 由于，因此
+as usual 像往常一样
 
 apply for 申请
 apply to 应用
+
+check in 登记入住
+check out 结账离开，检查，勘察
 
 give up 放弃
 give in 屈服，让步
@@ -169,6 +207,7 @@ give off 发出(光、热、气)
 give out 分发
 give away 赠送，赠与
 give back 归还，给回
+give/deliver a speech/lecture 发表演讲
 give sb. a hand/ride 帮某人一把/搭便车
 
 set off 出发
@@ -193,7 +232,7 @@ sb. spend time on sth. 某人在某事上花时间
 
 cut in 插嘴，插队，插入
 cut out 删除
-cut off 切断，切除
+cut off 切断，切除，打断
 cut down 削弱，减少
 cut up 切碎
 cut across 抄近道
@@ -230,6 +269,14 @@ show around 参观
 
 put forward 提出
 put up with 忍受
+put away 收拾，收起
+put up 张贴，搭建，举起
+put down 放下，记下
+put aside 搁置，放在一旁
+put on 穿上，上演/上映
+put on weight 增重
+put into effect 生效
+put out 扑灭
 
 stand out 突出，显眼
 stand for 代表，支持
@@ -253,15 +300,34 @@ pass on 传递
 carry out 执行
 carry on 继续
 
+stay in love with... 保持对...的热爱
+stay in 待在
+
 call off 取消
 call on 号召，呼吁，拜访
 call in 召回，号召
+
+come across 偶遇
+come out 出版
+come up with 提出，想出 
+come into effect on 生效
+
+go through 经历，通过，经过
+go out 外出
+go after 追赶，追逐，追求
+go across 横过
+go over 检查，复习
+go sightseeing 观光，游览
 
 serve in 在...任职
 serve as 任职为...
 
 run out of 花光，用光 -----> use up 花光，用光
 run through 流经
+run after 在...后面跑，追赶，追逐
+
+settle down 定居
+settle to 达成一致，解决
 
 worry about 担心
 be worried about 担心
@@ -272,17 +338,22 @@ achieve/realize one's dream 完成某人的梦想
 prefer doing A to (doing) B 愿意做A不愿意做B
 prefer to do A rather than do B 宁愿做A也不愿做B
 
+feel free to do sth. 随意做某事，随便做某事
+feel ashamed of 对...感到羞愧
+
+with difficulty 艰难地
+without permission 未经允许
+without doubt 毫无疑问
+
 hang out 外出，闲逛
 
-come up with 提出，想出 
+figure out 解决，弄清楚
 
 cheer oneself up 给某人打气
 
 land on/at 登陆，着陆
 
 succeed in doing sth. 成功做某事
-
-stay in love with... 保持对...的热爱
 
 travel to 去...旅行
 
@@ -300,15 +371,53 @@ warm up 热身
 
 pack up 打包
 
+wake up 醒来，苏醒
+
 correpond with/to... 与...一致
 
 hear from 收到...的来信
 
 inform sb. of... 通知某人某事
 
-go through 经历，通过，经过
-
 hurry up 快点
+
+sign up for 报名
+
+end up with doing 以...告终，结果...
+
+lay out 铺开
+
+sell out 卖光
+
+rush to sp. 冲到某地
+
+refer to 指的是，涉及，与...相关
+
+heat up 加热
+
+dare to do sth. 敢于做某事
+
+sorry for doing sth. 对...事感到抱歉
+
+help oneself 自便
+
+sweep up 扫走，清扫
+
+care about 关心，在乎
+
+speak of 说到，谈到...
+
+tidy up 收拾，整理
+
+try on 试穿
+
+close down 关门，倒闭
+
+waste time on sth. 浪费时间在某事上
+
+stare at 盯着
+
+divide A into B 把A分成B
 
 be used to do 被用来...
 used to do 过去常常做...
@@ -331,19 +440,32 @@ the talent for... ...的天赋
 be considered as... 被视为...
 be seen as... 被视为...
 be regarded as... 被视为...
+be taken as 被认为...，被视为...
 
 along with 伴随着
 
 take control of 控制
 out of control 失控
 
+now that 既然
+in that 由于，因为
+
 any more 不再
 no longer 不再
+
+lunar calendar 阴历
+solar calendar 阳历
+
+inspired by 受...启发
+be inspired by 被...启发
 
 study abroad 出国留学
 
 do harm to sth. 伤害...
 be harmful to sth. 对...有害
+
+devote onself to doing 投身于，献身于...
+be devoted to doing 投身于，献身于...
 
 account for 占比，解释，对...负责
 on account of 由于，考虑到
@@ -378,17 +500,21 @@ appeal to 吸引，上诉
 
 charge sb. money for sth. 因...向某人收钱
 
-no longer 不再
-
 long for 渴望
 
 one another 互相
 each other 彼此，互相
 
+take a walk 散步
+go for a walk 散步
+
 sb. would appreciate it if... 某人将感激不敬，如果....
 
 be patient with 对...有耐心
 be pleased/satisfied(dissatisfied)/content with 对...满意(不满意)的
+
+be careful of 小心，谨慎
+be careful with... 小心
 
 just/as a saying goes 正如什么所说，俗话说
 
@@ -396,14 +522,33 @@ be ready to do 准备做某事
 
 be different from 与...不一样
 
+be named after 以...命名
+
 be full of 充满
+be filled of 充满
+
+be faced with 面对...
+face with 面对...
+
+be crazy about 对...痴迷
 
 be involved in 参加
 participate in 参加
 
+calm down 冷静下来
+quiet down 冷静下来
+
+from time to time 有时，偶尔
+now and then 偶尔
+
 be informed of 被通知...
 
 be absored in 专注于...
+
+be caught in 遭遇，陷入
+
+be week in 在...方面薄弱
+be poor in 在...方面很糟糕
 
 be supposed to do sth. 应该做某事
 
@@ -412,13 +557,24 @@ be moved by 被...感动
 be thristy for 渴望...
 be eager for 渴望...
 
+be compared to 与...相比(比喻为 / 好比是)
+be compared with 与...相比
+
 be covered with/by 被...覆盖
 
 be late for 迟到
 
 be unique to 是...独有的
 
+be tired of doing sth. 对...感到厌倦
+
 be scared to do 害怕做某事
+
+be curious about 对...好奇
+
+be serious about 对...认真
+
+be passionate about 热衷于...，对...有激情
 
 be keen on 热衷于
 
@@ -427,6 +583,8 @@ be aware of 意识到...
 be praised for 因...而受到赞扬
 
 be criticized for 因...而受批评
+
+be essential/important for 对...很重要
 
 be divided into 被分为...
 
@@ -440,15 +598,51 @@ a bility to do ...的能力
 
 a great deal of 大量的(修饰不可数名词)
 
+a couple of 一对，几件
+
+a series of 一系列的
+
+plenty of 充足的
+
 all in all 总的来说
+in general 总的来说，通常来说
+
+at once 马上，立即
+right now 马上，立即
+
+apart from 除了
+in addition to 除了
+except for 除了
+
+All over the world 世界各地
+around world 世界各地
+Throughout the world 遍及世界各地
+from all sizes 来自各方的
 
 the shortage of 缺乏....
 
+the same (as)... 和...一样
+
 contribute to (doing) 有助于...，导致...
+be useful for 有助于...
+be good for 有助于...
+be helpful to/for 有助于...
 
 ever since then 自那时起
+hardly ever 几乎从不
+
+not at all 一点也不
+
+at the same time 与此同时
+
+to tell the truth 说实话
+
+nothing better than 没有什么比...更好了
 
 acdemic performance 学习成绩
+white lie 善意的谎言
+black tea 红茶
+master a foreign language 掌握一门外语
 
 When it comes to... 当提及...时
 
@@ -456,5 +650,11 @@ How about doing sth .....? 做某事怎么样
 
 What about doing ......? .....怎么样?
 
+Only when 只有...时，才会...
+
+if only 要是...就好了
+
 ​```
 
+
+```
