@@ -17,6 +17,10 @@ FILE *fopen(const char *filename, const char *mode);
 - 打开指定文件
 - 返回文件指针，失败返回NULL
 
+#### 返回值
+- 成功：返回指向FILE结构的指针
+- 失败：返回NULL（并设置errno）
+
 #### 常用打开模式
 | 模式 | 含义 |
 |------|------|
@@ -56,6 +60,10 @@ int fclose(FILE *stream);
 - 关闭打开的文件
 - 成功返回0，失败返回EOF
 
+#### 返回值
+- 成功：返回0
+- 失败：返回EOF（并设置errno）
+
 #### 示例
 ```c
 fclose(fp);
@@ -82,6 +90,10 @@ while ((ch = fgetc(fp)) != EOF) {
 }
 ```
 
+#### 返回值
+- 成功：返回读取的字符（ASCII码）
+- 失败/文件结束：返回EOF
+
 #### fputc() - 写入字符
 ```c
 int fputc(int c, FILE *stream);
@@ -99,6 +111,10 @@ for (int i = 0; str[i] != '\0'; i++) {
     fputc(str[i], fp);  // 逐个字符写入
 }
 ```
+
+#### 返回值
+- 成功：返回写入的字符（ASCII码）
+- 失败：返回EOF
 
 ### 2. 字符串读写
 
@@ -121,6 +137,10 @@ while (fgets(buffer, sizeof(buffer), fp) != NULL) {
 }
 ```
 
+#### 返回值
+- 成功：返回指向缓冲区的指针（str）
+- 失败/文件结束：返回NULL
+
 #### fputs() - 写入字符串
 ```c
 int fputs(const char *str, FILE *stream);
@@ -137,6 +157,10 @@ fputs("第一行文本\n", fp);
 fputs("第二行文本\n", fp);
 fputs("第三行文本\n", fp);
 ```
+
+#### 返回值
+- 成功：返回非负值
+- 失败：返回EOF
 
 ### 3. 格式化读写
 
@@ -157,6 +181,10 @@ int age = 25;
 float score = 95.5;
 fprintf(fp, "姓名：%s，年龄：%d，成绩：%.1f\n", "张三", age, score);
 ```
+
+#### 返回值
+- 成功：返回写入的字符数
+- 失败：返回负数
 
 #### fscanf() - 格式化读取
 ```c
@@ -179,6 +207,10 @@ float score;
 fscanf(fp, "姓名：%s，年龄：%d，成绩：%f", name, &age, &score);
 printf("读取到：姓名=%s，年龄=%d，成绩=%.1f\n", name, age, score);
 ```
+
+#### 返回值
+- 成功：返回成功匹配和赋值的输入项数
+- 失败/文件结束：返回EOF
 
 ### 4. 二进制读写
 
@@ -207,6 +239,10 @@ size_t count = fread(students, sizeof(struct Student), 10, fp);
 printf("成功读取%d个学生数据\n", count);
 ```
 
+#### 返回值
+- 成功：返回实际读取的数据项数
+- 失败/文件结束：返回小于nmemb的值
+
 #### fwrite() - 写入二进制数据
 ```c
 size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
@@ -234,6 +270,10 @@ struct Student {
 size_t count = fwrite(students, sizeof(struct Student), 2, fp);
 printf("成功写入%d个学生数据\n", count);
 ```
+
+#### 返回值
+- 成功：返回实际写入的数据项数（等于nmemb）
+- 失败：返回小于nmemb的值
 
 ## 三、文件定位操作
 
@@ -267,6 +307,10 @@ fseek(fp, 100, SEEK_CUR);
 fseek(fp, 50, SEEK_SET);
 ```
 
+#### 返回值
+- 成功：返回0
+- 失败：返回非0值
+
 ### 2. ftell() - 获取文件位置
 ```c
 long ftell(FILE *stream);
@@ -287,6 +331,10 @@ long file_size = ftell(fp);
 printf("文件大小：%ld字节\n", file_size);
 ```
 
+#### 返回值
+- 成功：返回当前文件指针的位置（字节偏移量）
+- 失败：返回-1L（并设置errno）
+
 ### 3. rewind() - 重置文件位置
 ```c
 void rewind(FILE *stream);
@@ -306,6 +354,9 @@ while (fgets(buffer, sizeof(buffer), fp) != NULL) {
     printf("%s", buffer);
 }
 ```
+
+#### 返回值
+- 无返回值（void）
 
 ## 四、文件状态检查
 
@@ -334,6 +385,10 @@ while (1) {
 }
 ```
 
+#### 返回值
+- 文件结束：返回非0值（真）
+- 文件未结束：返回0（假）
+
 ### 2. ferror() - 检查文件错误
 ```c
 int ferror(FILE *stream);
@@ -353,6 +408,10 @@ if (fputs(str, fp) == EOF) {
     }
 }
 ```
+
+#### 返回值
+- 有错误：返回非0值（真）
+- 无错误：返回0（假）
 
 ### 3. clearerr() - 清除文件错误
 ```c
@@ -376,6 +435,9 @@ if (fputs("恢复写入\n", fp) != EOF) {
     printf("文件操作恢复成功\n");
 }
 ```
+
+#### 返回值
+- 无返回值（void）
 
 ## 五、常用文件操作常量
 
