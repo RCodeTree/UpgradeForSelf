@@ -52,14 +52,18 @@ int main()
     for (i = 1; i++ < 4;);
     printf("%d\n", i); // 5*/
 
-    int a = 1;
-    int b = 10;
-    do
-    {
-        b -= a;
-        a++;
-    }
-    while (b-- < 0);
-    printf("%d\n", b); //
+    // int a = 1;
+    // int b = 10;
+    // do
+    // {
+    //     b -= a;
+    //     a++;
+    // }
+    // while (b-- < 0);
+    // printf("%d\n", b); //
+
+
+    // int a[2][3] = {2, 4, 6, 8, 10, 12};
+    // printf("%d\n", *(a[1] + 2)); // 12
     return 0;
 }
