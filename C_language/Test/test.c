@@ -98,8 +98,43 @@ int main()
     // sss = fun(a, ROW, b);
     // printf("sss = %d\n", sss);
 
-    char s1[300] = "abcaa63akdfk", s2[300] = "ayk5";
-    fun(s1, s2);
-    printf("%s\n", s1);
+    // char s1[300] = "abcaa63akdfk", s2[300] = "ayk5";
+    // fun(s1, s2);
+    // printf("%s\n", s1);
+
+    int i, j, k, m;
+    for (i = 1; i <= 5; i++)
+    {
+        for (k = 1; k <= 5 - i; k++)
+            printf(" ");
+        for (j = 1; j <= 2 * i - 1; j++)
+        {
+            if (j == 2)
+            {
+                for (m = 2; m <= 2 * i - 2; m++)
+                    printf(" ");
+                j = m - 1;
+            }
+            else printf("*");
+        }
+        printf("\n");
+    }
+
+    for (i = 4; i >= 1; i--)
+    {
+        for (k = 1; k <= 5 - i; k++)
+            printf(" ");
+        for (j = 1; j <= 2 * i - 1; j++)
+        {
+            if (j == 2)
+            {
+                for (m = 2; m <= 2 * i - 2; m++)
+                    printf(" ");
+                j = m - 1;
+            }
+            else printf("*");
+        }
+        printf("\n");
+    }
     return 0;
 }
