@@ -4,8 +4,8 @@
 #define ROW 4
 #define COL 4
 #define A(a, b) ((a + b) * (a + b))
-#define n 3
-#define m 4
+// #define n 3
+// #define m 4
 
 /*int fun(int a[][COL], int row, int* b)
 {
@@ -291,6 +291,16 @@ void print(stu s[5])
     }
 }*/
 
+/*int fun(int x[], int n)
+{
+    static int sum = 0, i;
+    for (i = 0; i < n; i++)
+    {
+        sum += x[i];
+    }
+    return sum;
+}*/
+
 int main()
 {
     /*int a[5] = {0};
@@ -429,7 +439,21 @@ int main()
     fclose(target);
     fclose(source);*/
 
+    /*int arr[5] = {2, 4, 6, 8, 10};
+    int* p = arr + 1;
+    printf("%d\n", *(p + 2) - *(--p));*/
 
+    /*int arr[4] = {10, 20, 30, 40};
+    int* p = arr;
+    while (p < arr + 4)
+    {
+        printf("%d ", *p++);
+    }
+    printf("\n");*/
+
+    /*int a[] = {1, 2, 3, 4, 5}, b[] = {6, 7, 8, 9}, s = 0;
+    s = fun(a, 5 + fun(b, 4));
+    printf("%d\n", s);*/
 
 
     return 0;
