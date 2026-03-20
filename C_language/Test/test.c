@@ -455,6 +455,16 @@ int main()
     s = fun(a, 5 + fun(b, 4));
     printf("%d\n", s);*/
 
+    int n = 1;
+    printf("%d %d\n", n++, ++n);
+    printf("%d %d\n", n, n++); // 2 1 -----> 先计算了n++, 再计算了n
+    printf("%d\n", n); // 2
+
+
+
+
+
+
 
     return 0;
 }
