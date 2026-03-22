@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define ROW 4
@@ -112,7 +113,6 @@
     printf("出现最多的字符是： %c\n", max + 'a');
 }*/
 
-
 /*int fun(int* a, int n, int x)
 {
     int p = 0, i;
@@ -128,14 +128,12 @@
     }
 }*/
 
-
 /*enum Color
 {
     RED,
     GREEN = 5,
     BLUE,
 };*/
-
 
 /*void invert(char s[])
 {
@@ -149,7 +147,6 @@
         q--;
     }
 }*/
-
 
 /*int getNum(int* a, int n)
 {
@@ -299,6 +296,72 @@ void print(stu s[5])
         sum += x[i];
     }
     return sum;
+}*/
+
+/*int f(int m)
+{
+    static int i = 2;
+    int s = 0;
+    for (; i <= m; i++) s += i;
+    return s;
+}*/
+
+/*typedef struct node
+{
+    int x;
+    struct node* next;
+} node;*/
+
+/*void quickSort(int arr[], int i, int j)
+{
+    int start = i;
+    int end = j;
+
+    if (start > end) return;
+
+    int baseNum = arr[i];
+
+    while (start != end)
+    {
+        //利用end，从后往前开始找，找比基准数小的数字
+        while (1)
+        {
+            if (end <= start || arr[end] < baseNum)
+            {
+                break;
+            }
+            end--;
+        }
+
+        //利用start，从前往后开始找，找比基准数大的数字
+        while (1)
+        {
+            if (end <= start || arr[start] > baseNum)
+            {
+                break;
+            }
+            start++;
+        }
+
+        //把end和start指向的元素进行交换
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+    }
+
+    //当start和end指向了同一个元素的时候，那么上面的循环就会结束
+    //表示已经找到了基准数在数组中应存入的位置
+    //基准数归位
+    //就是拿着这个范围中的第一个数字，跟start指向的元素进行交换
+    int temp = arr[i];
+    arr[i] = arr[start];
+    arr[start] = temp;
+
+    //利用递归重复quickSort排序好基准数两边的数据
+    //基准数左边的数
+    quickSort(arr, i, start - 1);
+    //基准数右边的数
+    quickSort(arr, start + 1, j);
 }*/
 
 int main()
@@ -455,14 +518,78 @@ int main()
     s = fun(a, 5 + fun(b, 4));
     printf("%d\n", s);*/
 
-    int n = 1;
+    /*int n = 1;
     printf("%d %d\n", n++, ++n);
     printf("%d %d\n", n, n++); // 2 1 -----> 先计算了n++, 再计算了n
-    printf("%d\n", n); // 2
+    printf("%d\n", n); // 2*/
 
+    /*
+    int sum = f(3) + f(5);
+    printf("%d\n", sum);
+    */
 
+    /*puts("jfakl");
+    puts("jfakl");*/
 
+    /*node *head, *p1, *p2;
+    int n = 0;
+    float ave = 0;
+    while (1)
+    {
+        p2 = (node*)malloc(sizeof(node));
+        scanf("%d", &p2->x);
+        ave += p2->x;
+        if (n++ == 0) head = p1 = p2;
+        else
+        {
+            p1->next = p2;
+            p1 = p2;
+        }
+        if (p2->x == 0)
+        {
+            p2->next = NULL;
+            break;
+        }
+    }
+    ave /= n;
+    p1 = head;
+    while (p1 -> next)
+    {
+        if (p1->x < ave) printf("%d\n", p1->x);
+        p1 = p1->next;
+    }*/
 
+    /*FILE *pa = fopen("d1.txt", "r"), *pb = fopen("d2.txt", "w");
+    char aa[11];
+    float sl, jg;
+    while (fscanf(pa, "%s%f%f", aa, &sl, &jg) != EOF)
+    {
+        if (aa[0] == '1') fprintf(pb, "%10s %10.3f %10.2f\n", aa, sl, jg * 0.9);
+        else fprintf(pb, "%10s %10.3f %10.2f\n", aa, sl, jg);
+    }
+    fclose(pa);
+    fclose(pb);
+    remove("d1.txt");
+    rename("d2.txt", "d1.txt");*/
+
+    /*int x = 5;
+    printf("%d %d", x++, ++x); // 6 7*/
+
+    int n;
+    int i = 0;
+    printf("请输入数组的长度：");
+    scanf("%d", &n);
+    int* arr = (int*)malloc(n * sizeof(int));
+    if (arr == NULL) return 1;
+    for (; i < n; i++)
+    {
+        if (scanf("%d", arr + i) != 1)
+        {
+            printf("输入包含非数字字符，程序终止！\n");
+            free(arr);
+            return 1;
+        }
+    }
 
 
 
