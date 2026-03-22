@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 // 链表节点结构
-typedef  struct
+typedef struct Node
 {
     int data;
-    struct ListNode* next;
+    struct Node* next;
 } Node;
 
 // 创建新节点
