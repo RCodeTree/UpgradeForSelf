@@ -575,7 +575,7 @@ int main()
     /*int x = 5;
     printf("%d %d", x++, ++x); // 6 7*/
 
-    int n;
+    /*int n;
     int i = 0;
     printf("请输入数组的长度：");
     scanf("%d", &n);
@@ -589,9 +589,38 @@ int main()
             free(arr);
             return 1;
         }
-    }
+    }*/
 
+    /*int y = 0;
+    do { y = y * y; }
+    while (!y);*/
 
+    /*int x = 2, y = 3, z;
+    z = (x -= x + 2), (x += 2, ++y); // z取的是 x-=x+2 的值
+    printf("%d,%d,%d\n", x, y, z);*/
 
+    /*int a = 3, b = 0, c = 3;
+    if (a < b)
+        if (b < 0) c = 5;
+        else c += 2;
+    printf("%d\n", c);*/
+
+    /*int p = 5, q = 6, r;
+    r = (p += p - 3), (q -= 2, ++p); // r = 7 p = 8 q = 4
+    printf("%d,%d,%d\n", p, q, r);*/
+
+    /*double f;
+    f = 2, f + 8, f++;
+    printf("%f\n", f);*/
+
+    /*double x = 3.6, y = 5.2;
+    int a = 9;
+    printf("%lf\n", x + a % 4 * (int)(x + y) % 3 / 5);*/
+
+    /*int p = 18, q = 4;
+    p %= (q % 2);
+    printf("%d\n", p);*/
+
+    printf("%8.3f%%", 2.0 / 3);
     return 0;
 }
