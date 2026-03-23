@@ -621,6 +621,51 @@ int main()
     p %= (q % 2);
     printf("%d\n", p);*/
 
-    printf("%8.3f%%", 2.0 / 3);
+    /*
+     *printf("%8.3f%%", 2.0 / 3);
+     *
+     */
+
+    /*FILE* s = fopen("d1.txt", "r");
+    FILE* d = fopen("d2.txt", "w");
+    char c = fgetc(s);
+    while (!feof(s))
+    {
+        if (c != ' ') fputc(c, d);
+        c = fgetc(s);
+    }
+    fclose(d);
+    fclose(s);*/
+
+    /*FILE* s = fopen("d1.txt", "r");
+    FILE* d = fopen("d2.txt", "w");
+    char c = fgetc(s);
+    while (!feof(s))
+    {
+        if (c >= 'A' && c <= 'Z') fputc(c + 32, d);
+        else fputc(c, d);
+        c = fgetc(s);
+    }
+    fclose(d);
+    fclose(s);*/
+
+    FILE* s = fopen("d1.txt", "r");
+    FILE* d = fopen("d2.txt", "w");
+    char c;
+    while ((c = fgetc(s)) != EOF)
+    {
+        if (!(c >= 'a' && c <= 'z'))
+        {
+            if (!(c >= 'A' && c <= 'Z'))
+            {
+                if (!(c >= '0' && c <= '9'))
+                {
+                    fputc(c, d);
+                }
+            }
+        }
+    }
+    fclose(d);
+    fclose(s);
     return 0;
 }
