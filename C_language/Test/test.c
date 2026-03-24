@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -364,6 +365,63 @@ void print(stu s[5])
     quickSort(arr, start + 1, j);
 }*/
 
+/*long fun(int n)
+{
+    return n * n;
+}*/
+
+/*void fun(int* a, int n)
+{
+    int i, m, t, k;
+    for (i = 0; i < n; i++)
+    {
+        m = i;
+        for (k = i + 1; k < n; k++)
+        {
+            if (a[k] > a[m])
+            {
+                m = k;
+            }
+        }
+        t = a[i];
+        a[i] = a[m];
+        a[m] = t;
+    }
+}*/
+
+/*void fun(char* str, char ch)
+{
+    while (*str && *str == ch) str++;
+    if (*str == ch)
+    {
+        *str = ch;
+        *(str + 1) = 0;
+    }
+}*/
+
+/* void insert(char* aa)
+{
+    int i, j, n;
+    char ch;
+    n = strlen(aa);
+    for (i = 1; i < n; i++)
+    {
+        ch = aa[i];
+        j = i - 1;
+        1;
+        while ((j >= 0) && (ch < aa[j]))
+        {
+            aa[j + 1] = aa[j];
+            j--;
+        }
+        aa[j + 1] = ch;
+    }
+} */
+
+/*float f(float*, int);
+float f(float* a, int n);*/
+
+
 int main()
 {
     /*int a[5] = {0};
@@ -649,7 +707,7 @@ int main()
     fclose(d);
     fclose(s);*/
 
-    FILE* s = fopen("d1.txt", "r");
+    /*FILE* s = fopen("d1.txt", "r");
     FILE* d = fopen("d2.txt", "w");
     char c;
     while ((c = fgetc(s)) != EOF)
@@ -666,6 +724,38 @@ int main()
         }
     }
     fclose(d);
-    fclose(s);
+    fclose(s);*/
+
+    /*int a[5] = {2, 10, 4, 8, 6}; // 10 8 6 2 4
+    for (int i = 0; i < 5; i++) printf("%d ", a[i]);
+    printf("\n");
+    fun(a, 5);
+    for (int i = 0; i < 5; i++) printf("%d ", a[i]);
+    printf("\n");*/
+
+    /*char* str = "hello world";
+    fun(str, 'e');
+    printf("%s\n", str);*/
+
+    /*char aa[10] = "bcad";
+    insert(aa);
+    printf("%s\n", aa);*/
+
+    /*int a = 16, c;
+    c = ~a;
+    printf("%d\n", c);*/
+
+    int n;
+    scanf("%d", &n);
+    if (n <= 0) return 1;
+    int* a = (int*)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++) scanf("%d", (a + i));
+    int v = 0;
+    for (int i = 0; i < n; i++) v += *(a + i);
+    v = v / n;
+    double r = 0;
+    for (int i = 0; i < n; i++) r += pow(*(a + i) - v, 2);
+    r = sqrt(r) / n;
+    printf("v = %d, r = %f\n", v, r);
     return 0;
 }
