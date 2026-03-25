@@ -418,8 +418,22 @@ void print(stu s[5])
     }
 } */
 
-/*float f(float*, int);
-float f(float* a, int n);*/
+/*
+float f(float*, int);
+float f(float* a, int n);
+*/
+
+/*char* f1(char s1[], char s2[])
+{
+    int i, j, m;
+    m = strlen(s2);
+    for (i = 0; i < strlen(s1) - m; i++)
+    {
+        for (j = 0; j < m; j++) if (s1[i + j] != s2[j]) break;
+        if (j == m) return s1 + i;
+    }
+    return NULL;
+}*/
 
 
 int main()
@@ -745,7 +759,7 @@ int main()
     c = ~a;
     printf("%d\n", c);*/
 
-    int n;
+    /*int n;
     scanf("%d", &n);
     if (n <= 0) return 1;
     int* a = (int*)malloc(n * sizeof(int));
@@ -756,6 +770,42 @@ int main()
     double r = 0;
     for (int i = 0; i < n; i++) r += pow(*(a + i) - v, 2);
     r = sqrt(r) / n;
-    printf("v = %d, r = %f\n", v, r);
+    printf("v = %d, r = %f\n", v, r);*/
+
+    /*
+    // 4 + 16 + 1 + 3 = 24
+    // 24 + 4 = 28
+    struct student
+    {
+        int num;
+        char name[16];
+        char sex;
+        int age;
+    } s, *ps;
+    printf("%lu %lu %lu\n", sizeof(struct student), sizeof(s), sizeof(ps)); // 28 28 8
+    */
+
+    /*short a = -1;
+    printf("%d\n", a);
+    printf("%d\n", ~a);*/
+
+
+    /*char s1[] = "WINDOWS";
+    char s2[] = "DO";
+    char* p = f1(s1, s2);
+    if (p == NULL) printf("not found\n");
+    else printf("%s\n", p);*/
+
+
+    FILE* s = fopen("d1.txt", "r");
+    FILE* d = fopen("d2.txt", "w");
+    char name[10];
+    float score;
+    while (fscanf(s, "%s %f", name, &score) != EOF)
+    {
+        if (score < 60) fprintf(d, "%s %f\n", name, score);
+    }
+    fclose(d);
+    fclose(s);
     return 0;
 }
