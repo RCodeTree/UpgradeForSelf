@@ -789,15 +789,7 @@ int main()
     printf("%d\n", a);
     printf("%d\n", ~a);*/
 
-
-    /*char s1[] = "WINDOWS";
-    char s2[] = "DO";
-    char* p = f1(s1, s2);
-    if (p == NULL) printf("not found\n");
-    else printf("%s\n", p);*/
-
-
-    FILE* s = fopen("d1.txt", "r");
+    /*FILE* s = fopen("d1.txt", "r");
     FILE* d = fopen("d2.txt", "w");
     char name[10];
     float score;
@@ -806,6 +798,8 @@ int main()
         if (score < 60) fprintf(d, "%s %f\n", name, score);
     }
     fclose(d);
-    fclose(s);
+    fclose(s);*/
+
+    
     return 0;
 }
