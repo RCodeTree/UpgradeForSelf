@@ -800,6 +800,10 @@ int main()
     fclose(d);
     fclose(s);*/
 
+    /*char* sp = "\x41\102c\0de";
+    for (; *sp != '\0'; sp++) printf("*");*/
+
     
+
     return 0;
 }
