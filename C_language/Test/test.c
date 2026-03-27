@@ -803,7 +803,26 @@ int main()
     /*char* sp = "\x41\102c\0de";
     for (; *sp != '\0'; sp++) printf("*");*/
 
-    
+    /*int id;
+    float score;
+    int count;
+    FILE* s = fopen("d1.txt", "r");
+    if (!s) return 1;
+    FILE* d = fopen("d2.txt", "w");
+    if (!d) return 1;
 
+    while (fscanf(s, "%d %f %d", &id, &score, &count) != EOF)
+    {
+        if (score + count > 100)
+        {
+            score = 100;
+            fprintf(d, "%d %f %d\n", id, score, count);
+        }
+        else fprintf(d, "%d %f %d\n", id, score, count);
+    }
+    fclose(d);
+    fclose(s);*/
+
+    
     return 0;
 }
