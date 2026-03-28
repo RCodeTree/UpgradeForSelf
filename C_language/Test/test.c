@@ -435,13 +435,26 @@ float f(float* a, int n);
     return NULL;
 }*/
 
+int jc(int k)
+{
+    return k < 2 ? 1 : k * jc(k - 1);
+}
+
+void f(int a[][5], int n)
+{
+    int i, j;
+    for (i = 0; i < n; i++)
+        for (j = i; j < n; j++) a[i][j] = 0;
+    for (i = 1; i < n; i++)
+        for (j = 0; j < i; j++) a[i][j] = jc(i + j);
+}
 
 int main()
 {
     /*int a[5] = {0};
     a[0] = 1;
     for (int i = 0; i < 5; i++)
-    	printf("%d\n", a[i]);*/
+        printf("%d\n", a[i]);*/
 
     /*struct stud
     {
@@ -823,6 +836,89 @@ int main()
     fclose(d);
     fclose(s);*/
 
-    
+    /*int m, i;
+    while (scanf("%d", &m), m > 2)
+    {
+        for (i = 2; i <= sqrt(m); i++)
+            if (m % i == 0)
+            {
+                printf("%d*%d=%d\n", i, m / i, m);
+                break;
+            }
+        if (i > sqrt(m)) printf("不可分解\n");
+    }*/
+
+    /*
+     二维数组实现：
+     0 0 0 0 0
+     1 0 0 0 0
+     2 6 0 0 0
+     6 24 120 0 0
+     24 120 720 5040 0
+     */
+    /*int n = 5;
+    int a[5][5];
+    f(a, n);
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++) printf("%d\t", a[i][j]);
+        printf("\n");
+    }*/
+    /*//  编程，在[1,98]查找并输出所有满足条件“x + x+1 + x+2的平方根是整数”的数x（如输出2、11，因为2+3+4的和为9，11+12+13和为36，他们的平方根3、6都是整数）。
+    int x1;
+    for (x1 = 1; x1 <= 98; x1++)
+    {
+        int r = x1 + (x1 + 1) + (x1 + 2);
+        if ((sqrt(r) * sqrt(r)) == r)
+        {
+            printf("%d ", x1);
+        }
+    }
+    printf("\n");
+
+    int x2;
+    printf("在 [1,98] 中满足条件的 x 为：\n");
+    for (x2 = 1; x2 <= 98; x2++)
+    {
+        int sum = x2 + (x2 + 1) + (x2 + 2); // 三个连续整数的和
+        double root = sqrt(sum); // 取整后的平方根
+        if (root * root == sum)
+        {
+            // 验证是否为完全平方
+            printf("%d ", x2);
+        }
+    }
+    printf("\n");*/
+
+    /*
+     *printf("%lu\n", sizeof("张三"));
+     *
+     */
+
+    /*short a = 3;
+    short b = -7;
+    short c = a & b;
+    printf("%d\n", c); // 1*/
+
+    /*int a[4][4] = {{1, 2, 3, 4}, {2, 3, 4, 5}, {3, 4, 5, 6}, {4, 5, 6, 7}}, i, j;
+    for (i = 0; i < 4; i++)
+    {
+        for (j = 1; j <= 3 - i; j++) printf("   ");
+        for (j = 3 - i; j < 4; j++) printf("%3d", a[i][j]);
+        putchar('\n');
+    }*/
+
+    /*double x;
+    int n = 1;
+    double r = 1.1;
+    while (scanf("%lf", &x), x <= 1);
+    while (pow(r, n) < x)
+    {
+        printf("%lf\n", pow(r, n));
+        n++;
+    }
+    printf("%d\n", n);*/
+
+
     return 0;
 }
