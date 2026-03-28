@@ -435,19 +435,33 @@ float f(float* a, int n);
     return NULL;
 }*/
 
-int jc(int k)
+/*int jc(int k)
 {
     return k < 2 ? 1 : k * jc(k - 1);
-}
+}*/
 
-void f(int a[][5], int n)
+/*void f(int a[][5], int n)
 {
     int i, j;
     for (i = 0; i < n; i++)
         for (j = i; j < n; j++) a[i][j] = 0;
     for (i = 1; i < n; i++)
         for (j = 0; j < i; j++) a[i][j] = jc(i + j);
+}*/
+
+/*
+char* f(char* s)
+{
+    char c;
+    int k;
+    c = s[0];
+    k = strlen(s);
+    strcpy(s, s + 1);
+    s[k - 1] = c;
+    s[k] = '\0';
+    return s;
 }
+*/
 
 int main()
 {
@@ -564,7 +578,7 @@ int main()
     int* t = count(a, n, m);
     printf("z = %d, f = %d, x = %d\n", t[0], t[1], t[2]);*/
 
-    /*char* s = "1 23fafa4 542342324234236 7890 afasdasdfafasdf abcde 1111111fafffffffffffffffff11.";
+    /*char* s = "1 23fafa4 542342324234236 7890 afasdasdfafasdffasdfasdfasdaafafda abcde 1111111fafffffffffffffffff11.";
     printWord(s);*/
 
     /*stu ss[5];
@@ -919,6 +933,59 @@ int main()
     }
     printf("%d\n", n);*/
 
+    /*int i, j;
+    for (i = 0; i < 8; i++)
+    {
+        for (j = 0; j < 8; j++)
+            if ((i + j) % 2 == 0)
+                printf("%c%c", 219, 219);
+            else
+                printf(" ");
+        printf("\n");
+    }*/
+
+    /* short a = 3;
+    short b = -7;
+    printf("%d\n", a | b); // 计算二进制如果得出仍是负数，则要转换回原码输出 */
+
+    /*char a[10] = "1234567";
+    for (int i = 1; i <= 4; i++) printf("%s\n", f(a));*/
+
+    /*int n;
+    int num = 1;
+    scanf("%d", &n);
+    int a[n][n];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            num *= 4;
+            a[i][j] = num;
+        }
+    }
+
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++) printf("%d ", a[i][j]);
+        printf("\n");
+    }
+    printf("\n");
+    for (int i = 0; i < n; i++)
+    {
+        int t = a[i][i];
+        for (int j = 0; j < n; j++)
+        {
+            a[i][j] /= t;
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++) printf("%d ", a[i][j]);
+        printf("\n");
+    }*/
+
+    
 
     return 0;
 }
