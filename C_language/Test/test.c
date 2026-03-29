@@ -463,6 +463,15 @@ char* f(char* s)
 }
 */
 
+/*int f(int n)
+{
+    int c;
+    if (n == 1) c = 10;
+    else c = f(n - 1) + 2;
+    return c;
+}*/
+
+
 int main()
 {
     /*int a[5] = {0};
@@ -984,6 +993,90 @@ int main()
         for (int j = 0; j < n; j++) printf("%d ", a[i][j]);
         printf("\n");
     }*/
+
+    /*int n, i;
+    printf("\nplease input a number:\n");
+    scanf("%d", &n);
+    printf("%d=", n);
+    for (i = 2; i <= n; i++)
+    {
+        while (n != i)
+        {
+            if (n % i == 0)
+            {
+                printf("%d*", i);
+                n = n / i;
+            }
+            else
+                break;
+        }
+    }*/
+
+    /*
+    // *
+    // ***
+    // *****
+    // *******
+    // *****
+    // ***
+    // *
+    int i, j;
+    int line = 7;
+    int n = 4;
+    int m = line - n;
+    for (i = 1; i <= n; i++)
+    {
+        for (j = 1; j <= 2 * i - 1; j++)
+	{
+            printf("*");
+	}
+        printf("\n");
+    }
+    for (i = 3; i >= 1; i--)
+    {
+	    for (j = 1; j <= 2 * i - 1; j++)
+	    {
+		    printf("*");
+	    }
+	    printf("\n");
+    }*/
+
+    /*// 求第5个人的年龄
+    int count = 4;
+    int age = 10;
+    while (count--)
+    {
+        age += 2;
+    }
+    printf("%d\n", age);
+    printf("%d\n", f(5));*/
+
+    /*// 输入一个整数，输出该整数的位数和该整数的反转数
+    long num;
+    scanf("%ld", &num);
+    int count = 0;
+    long temp = num;
+    long r = 0;
+    while (temp)
+    {
+        r = r * 10 + temp % 10;
+        temp /= 10;
+        count++;
+    }
+    printf("%d\n", count);
+    printf("%ld\n", r);*/
+
+    /*long num;
+    scanf("%ld", &num);
+    long temp = 0;
+    long r = num;
+    while (r)
+    {
+        temp = temp * 10 + r % 10;
+        r /= 10;
+    }
+    if (temp == num) printf("This is a huiwen number\n");
+    else printf("This is not a huiwen number\n");*/
 
     
 

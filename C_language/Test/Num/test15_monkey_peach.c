@@ -10,18 +10,36 @@ f(n) = ( f(n+1) + 1 ) * 2
 */
 #include <stdio.h>
 
-int f(int day) {
-    if (day == 10) {
+int f(int day)
+{
+    if (day == 10)
+    {
         return 1;
-    } else {
+    }
+    else
+    {
         return (f(day + 1) + 1) * 2;
     }
 }
 
-int main() {
-    int day = 9;
+int f2(int day)
+{
+    int x1, x2 = 1;
+    while (day < 10)
+    {
+        x1 = (x2 + 1) * 2;
+        x2 = x1;
+        day++;
+    }
+    return x1;
+}
+
+int main()
+{
+    int day = 1;
 
     printf("第%d天有%d个桃子。\n", day, f(day));
+    printf("第%d天有%d个桃子。\n", day, f2(day));
 
     return 0;
 }
