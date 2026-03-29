@@ -32,7 +32,8 @@ int main()
     {
         while (n % i == 0)
         {
-            if (!check(i)) printf("%d ", i);
+            /*if (!check(i))*/ // 实际上，这里可有可无，因为每一轮 i 时，都会将 n 除以 i 并重新赋值，已经将存在的倍数排除了
+            printf("%d * ", i);
             n /= i;
         }
     }
