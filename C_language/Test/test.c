@@ -6,6 +6,7 @@
 #define ROW 4
 #define COL 4
 #define A(a, b) ((a + b) * (a + b))
+#define N 5
 // #define n 3
 // #define m 4
 
@@ -469,6 +470,23 @@ char* f(char* s)
     if (n == 1) c = 10;
     else c = f(n - 1) + 2;
     return c;
+}*/
+
+/*void strc(char* strDest, char* strSrc)
+{
+    char temp[80], *p;
+    int i = 0;
+    strcpy(temp, strDest + 1);
+    for (p = strDest; p <= strDest + strlen(strSrc); p++)
+        *p = strSrc[i++];
+    *p = '\0';
+    strcat(strDest, temp);
+}*/
+
+/*int f(int x, int y)
+{
+    static int a = 1;
+    return a = a + x + y;
 }*/
 
 
@@ -1027,18 +1045,18 @@ int main()
     for (i = 1; i <= n; i++)
     {
         for (j = 1; j <= 2 * i - 1; j++)
-	{
+    {
             printf("*");
-	}
+    }
         printf("\n");
     }
     for (i = 3; i >= 1; i--)
     {
-	    for (j = 1; j <= 2 * i - 1; j++)
-	    {
-		    printf("*");
-	    }
-	    printf("\n");
+        for (j = 1; j <= 2 * i - 1; j++)
+        {
+            printf("*");
+        }
+        printf("\n");
     }*/
 
     /*// 求第5个人的年龄
@@ -1077,6 +1095,112 @@ int main()
     }
     if (temp == num) printf("This is a huiwen number\n");
     else printf("This is not a huiwen number\n");*/
+
+    /*
+     *FILE* s = fopen("D:\\UpgradeForSelf\\C_language\\Test\\d1.txt", "w");*/
+
+    /*int a = 52;
+    a /= 2 ^ 1;
+    printf("%d\n", a);*/
+
+    /*int i, j, a[4][4] = {
+            {2, -1, 2, 7},
+            {2, 4, 3, 5},
+            {1, 4, -2, 3},
+            {4, -2, 8, 3}
+        };
+    for (i = 0; i < 4; i++)
+        for (j = 0; j < 4; j++) a[i][j] /= a[i][i];
+    for (i = 0; i < 4; i++)
+    {
+        for (j = 0; j < 4; j++) printf("%4d", a[i][j]);
+        putchar('\n');
+    }*/
+
+    /*int i;
+    char a[80] = "Windows_xp,word_2003,VC_6.0";
+    for (i = 0; a[i] != '\0'; i++)
+        if (a[i] == ',') strc(a + i, "Microsoft");
+    puts(a);*/
+
+    /*int a = 10, b, c, i;
+    b = 10 * a++;
+    for (i = 1; i < 3; i++) c = f(a, b);
+    printf("a,b,c:\n%d\n%d\n%d\n", a, b, c);*/
+
+    /*int i, j, k, m;
+    scanf("%d", &m);
+    for (i = 1; i <= m; i++)
+    {
+        for (j = 1; j <= m - i + 1; j++) printf(" %d", i + j - 1); // 打印前半部分
+        for (k = 1; j <= m; k++, j++) printf(" %d", k); // 打印后半部分
+        printf("\n");
+    }*/
+
+    /*float a[N], x, v = 0, d;
+    int i;
+    for (i = 0; i < N; i++)
+    {
+        scanf("%f", a + i);
+        v = v + a[i];
+    }
+    v /= 20;
+    x = a[0];
+    d = fabs(x - v);
+    for (i = 1; i < N; i++)
+        if (d > fabs(x - v))
+        {
+            d = fabs(x - v);
+            x = a[i];
+        }
+    printf("%f  %f\n", v, x);*/
+
+    /*// double x, area;
+    // int i;
+    // printf("请输入正方形 A1 的边长 x(x>1): ");
+    // scanf("%lf", &x);
+    // // 初始面积是 x²
+    // area = x * x;
+    // // 每个内接正方形面积是前一个的 1/2
+    // for (i = 2; i <= 10; i++)
+    // {
+    //     area = area / 2;
+    // }
+    // printf("A10 的面积是: %.6lf\n", area);
+    // 勾股定理
+    // double x, h;
+    // scanf("%lf", &x);
+    // if (x <= 1) return -1;
+    // for (int i = 2; i <= 10; i++)
+    // {
+    //     h = x / 2.0;
+    //     x = sqrt(pow(h, 2) + pow(h, 2));
+    // }
+    // printf("%.6lf\n", x);
+    // double s = sqrt(x);
+    // printf("%.6lf\n", s);
+    // // 边长等于原边长的 √2/2 倍
+    // double x;
+    // printf("请输入正方形 A1 的边长 x (x > 1): ");
+    // scanf("%lf", &x);
+    //
+    // if (x <= 1)
+    // {
+    //     printf("边长必须大于 1！\n");
+    //     return 1;
+    // }
+    //
+    // double side = x; // 当前正方形的边长
+    // int i;
+    // // 从 A1 到 A10，一共需要内接 9 次
+    // for (i = 1; i <= 9; i++)
+    // {
+    //     // 每次内接，边长变为原来的 √2/2 倍
+    //     side = side * sqrt(2) / 2;
+    // }
+    //
+    // double area = side * side; // 计算 A10 的面积
+    // printf("正方形 A10 的面积为: %.4f\n", area);*/
 
     
 
