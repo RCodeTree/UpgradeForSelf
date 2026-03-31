@@ -124,24 +124,16 @@ Node* insert(Node* head, int dest, int num)
         }
         break;
     case 2:
-        while (p1->next != NULL)
+        while (p1 != NULL)
         {
             if (p1->data == dest)
             {
-                Node* t = p1->next;
                 n->data = num;
+                n->next = p1->next;
                 p1->next = n;
-                n->next = t;
                 return h;
             }
-            if (p1->next->data == dest)
-            {
-                p2 = p1->next->next;
-                n->data = num;
-                n->next = p2;
-                p1->next->next = n;
-                return h; // 或者：使用break，后续再返回头地址
-            }
+            p1 = p1->next;
         }
     }
     free(n);
@@ -251,6 +243,14 @@ int main()
     printf("输入新的数据值:\n");
     scanf("%d", &num4);
     head2 = insert(head2, dest4, num4);
+    print(head2);
+
+    // 链表逆置
+    head2 = reverse(head2);
+    print(head2);
+
+    // 链表排序
+    head2 = sort(head2);
     print(head2);
 
     return 0;
