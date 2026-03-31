@@ -37,6 +37,7 @@ Node* create2(Node* head, int n)
         p2->next = p1;
         p1 = p2;
     }
+    h = p1;
     return h;
 }
 
@@ -85,7 +86,7 @@ Node* delete(Node* head, int dest)
             p1->next = p1->next->next;
             free(t);
         }
-        p1 = p1->next;
+        else p1 = p1->next;
     }
     return h;
 }
@@ -97,11 +98,20 @@ Node* insert(Node* head, int dest, int num)
     Node *p1 = head, *h = head, *p2;
     printf("1为头插法，2为尾插法：\n");
     int choice;
+    scanf("%d", &choice);
     switch (choice)
     {
     case 1:
         while (p1->next != NULL)
         {
+            if (p1->data == dest)
+            {
+                n->data = num;
+                n->next = p1;
+                p1 = n;
+                h = p1;
+                return h;
+            }
             if (p1->next->data == dest)
             {
                 p2 = p1->next;
@@ -116,6 +126,14 @@ Node* insert(Node* head, int dest, int num)
     case 2:
         while (p1->next != NULL)
         {
+            if (p1->data == dest)
+            {
+                Node* t = p1->next;
+                n->data = num;
+                p1->next = n;
+                n->next = t;
+                return h;
+            }
             if (p1->next->data == dest)
             {
                 p2 = p1->next->next;
@@ -202,6 +220,38 @@ int main()
     Node* head2 = create2(head, n);
     print(head2);
 
+    // 链表数据查询
+    /*int num;
+    printf("输入要查询的数据值:\n");
+    scanf("%d", &num);
+    Node* q_val = qeury(head2, num);
+    if (q_val == NULL) printf("查询的数据不存在\n");
+    else printf("查询的数据：%d\n", q_val->data);*/
+
+    // 链表数据更新
+    /*int dest, num2;
+    printf("输入要更新的数据值:\n");
+    scanf("%d", &dest);
+    printf("输入新的数据值:\n");
+    scanf("%d", &num2);
+    head2 = update(head2, dest, num2);
+    print(head2);*/
+
+    // 链表数据删除
+    /*int dest3;
+    printf("输入要删除的数据值:\n");
+    scanf("%d", &dest3);
+    head2 = delete(head2, dest3);
+    print(head2);*/
+
+    // 链表数据插入
+    int dest4, num4;
+    printf("输入要插入的数据值:\n");
+    scanf("%d", &dest4);
+    printf("输入新的数据值:\n");
+    scanf("%d", &num4);
+    head2 = insert(head2, dest4, num4);
+    print(head2);
 
     return 0;
 }
