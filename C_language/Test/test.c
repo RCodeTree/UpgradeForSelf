@@ -1202,7 +1202,13 @@ int main()
     // double area = side * side; // 计算 A10 的面积
     // printf("正方形 A10 的面积为: %.4f\n", area);*/
 
-    
+    printf("%d\n", !!5);
+    int x = 4, y = 3;
+    y = x < 0 && x++ > 3;
+    printf("(%d,%d)\n", x, y);
+
+    char *s1 = "ABCDE", *s2 = "ABCD";
+    printf("%d\n", strlen(strcat(s1, s2)));
 
     return 0;
 }
