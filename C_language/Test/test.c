@@ -489,10 +489,50 @@ char* f(char* s)
     return a = a + x + y;
 }*/
 
-long fib(int n)
+/*long fib(int n)
 {
     if (n > 2) return fib(n - 1) + fib(n - 2);
     else return 1;
+}*/
+
+typedef struct Node
+{
+    int val;
+    struct Node* next;
+} Node;
+
+void printLink(Node* head)
+{
+    Node* p1 = head->next;
+    while (p1 != NULL)
+    {
+        printf("%d ", p1->val);
+        p1 = p1->next;
+    }
+    printf("\n");
+}
+
+Node* distinctNode(Node* head)
+{
+    Node* p1 = head->next;
+    Node *p2 = p1->next, *h = head;
+    while (p2 != NULL)
+    {
+        if (p1->val == p2->val)
+        {
+            Node* t = p1->next->next;
+            Node* t2 = p1->next;
+            p1->next = t;
+            p2 = t;
+            free(t2);
+        }
+        else
+        {
+            p1 = p1->next;
+            p2 = p2->next;
+        }
+    }
+    return h;
 }
 
 int main()
@@ -1311,42 +1351,130 @@ int main()
     short a = 10;
     printf("%d\n", a << 2);
     */
-    
+
     /* 
     // 23.
     int b = 48;
     printf("%d\n", b >> 3);
     */
-    
+
     /* 
     // 24.
     int x = 24, y = 10;
     printf("%d\n", (x & y) | ((x ^ y) >> 1));
     */
-    
+
     /* 
     // 25.
     int m = 30, n = 12;
     printf("%d\n", (m | n) & ~(m & n));
     */
-    
+
     /* 
     // 26.
     int p = 20, q = 8;
     printf("%d\n", (p << 1) ^ (q >> 2));
     */
-    
+
     /* 
     // 27.
     int m = 034, n = 056;
     printf("%d\n", (m | n) & ~(m & n));
     */
 
-    
+    /*// 磁盘文件 d1 和 d2，各自存放一个已按字母顺序排好的字符串，编程合并二个文件
+    // 到 d3 文件中，合并后仍保持字母顺序（如 d1 中存放："accel"，d2 中存放"ilrz"，则 d3 中
+    // 为"acceillrz"）
+    FILE* f1 = fopen("d1.txt", "r");
+    FILE* f2 = fopen("d2.txt", "r");
+    FILE* f3 = fopen("d3.txt", "w");
+    if (!f1 || !f2 || !f3)
+    {
+        perror("文件打开失败");
+        return -1;
+    }
 
+    char ch1, ch2;
+    ch1 = fgetc(f1);
+    ch2 = fgetc(f2);
+    while (ch1 != EOF && ch2 != EOF)
+    {
+        if (ch1 <= ch2)
+        {
+            fputc(ch1, f3);
+            ch1 = fgetc(f1);
+        }
+        else
+        {
+            fputc(ch2, f3);
+            ch2 = fgetc(f2);
+        }
+    }
+    // 剩余字符
+    while (ch1 != EOF)
+    {
+        fputc(ch1, f3);
+        ch1 = fgetc(f1);
+    }
+    while (ch2 != EOF)
+    {
+        fputc(ch2, f3);
+        ch2 = fgetc(f2);
+    }
 
+    fclose(f1);
+    fclose(f2);
+    fclose(f3);*/
 
+    /*Node n1 = {1, NULL}, n2 = {2, NULL}, n3 = {3, NULL};
+    n1.next = &n2;
+    n2.next = &n3;
+    Node* t = &n1;
+    while (t != NULL)
+    {
+        printf("%d\n", t->val);
+        t = t->next;
+    }
+    printf("逆置后：\n");
+    Node *p, *q, *r;
+    p = &n1;
+    q = p->next;
+    p->next = NULL;
+    while (q != NULL)
+    {
+        r = q->next;
+        q->next = p;
+        p = q;
+        q = r;
+    }
+    Node* t2 = p;
+    while (t2 != NULL)
+    {
+        printf("%d\n", t2->val);
+        t2 = t2->next;
+    }*/
 
+    Node
+        head = {},
+        n1 = {1, NULL},
+        n2 = {1, NULL},
+        n3 = {3, NULL},
+        n4 = {4, NULL},
+        n5 = {4, NULL},
+        n6 = {6, NULL},
+        n7 = {8, NULL},
+        n8 = {8, NULL};
+    head.next = &n1;
+    n1.next = &n2;
+    n2.next = &n3;
+    n3.next = &n4;
+    n4.next = &n5;
+    n5.next = &n6;
+    n6.next = &n7;
+    n7.next = &n8;
+    printLink(&head);
+    distinctNode(&head);
+    printLink(&head);
 
 
     return 0;
