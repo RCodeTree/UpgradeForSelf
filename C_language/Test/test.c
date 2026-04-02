@@ -489,6 +489,11 @@ char* f(char* s)
     return a = a + x + y;
 }*/
 
+long fib(int n)
+{
+    if (n > 2) return fib(n - 1) + fib(n - 2);
+    else return 1;
+}
 
 int main()
 {
@@ -1202,13 +1207,147 @@ int main()
     // double area = side * side; // 计算 A10 的面积
     // printf("正方形 A10 的面积为: %.4f\n", area);*/
 
-    printf("%d\n", !!5);
+    /*printf("%d\n", !!5);
     int x = 4, y = 3;
     y = x < 0 && x++ > 3;
-    printf("(%d,%d)\n", x, y);
+    printf("(%d,%d)\n", x, y);*/
 
-    char *s1 = "ABCDE", *s2 = "ABCD";
-    printf("%d\n", strlen(strcat(s1, s2)));
+    /*char *s1 = "ABCDE", *s2 = "ABCD";
+    printf("%d\n", strlen(strcat(s1, s2)));*/
+
+    /*float x = 456.789123;
+    printf("%f\n", (int)(x * 100 + 0.5) / 100.0); // 456.790000
+    */
+
+    /*int p = 3, q = 4;
+    int result = (p += 3, q *= 2, p + q);
+    printf("%d\n", result);
+    */
+
+    /*int a = 2;
+    int b = (a = a + 3, (a = a * 2, a - 2), a + 4);
+    printf("%d\n", b);*/
+
+    /*int x = 8, y = 6, z = 4, t = 66;
+    if (y < x && x < z)
+    {
+        t = x;
+        x = z;
+    }
+    z = t;
+    if (x < z && y < z) t = y;
+    y = x;
+    x = t;
+    printf("%d%d%d\n", x, y, z); // 6866*/
+
+    /*// \v：垂直制表符（ASCII 11）
+    //
+    // \b：退格符（ASCII 8）
+    //
+    // \x32：十六进制转义，对应 ASCII 50，即字符 '2'
+    //
+    // \123：八进制转义，对应 ASCII 83，即字符 'S'
+    //
+    // \n：换行符（ASCII 10）
+    //
+    // \"：双引号（ASCII 34）
+    char str[] = "\v\b\x32\123\n\"";
+    printf("%d\n", strlen(str));
+    */
+
+    /*
+    int x = 4, y = -2, z = 88;
+    if (x < y)
+        // if (y < 0)
+        // {
+        //     z = 10;
+        // }
+        // else
+        // {
+        //     z -= 2;
+        // }
+        // switch (x)
+        // {
+        // case 4:
+        //     z = 10;
+        //     break;
+        // case 5:
+        //     z = 20;
+        //     break;
+        // default:
+        //     z -= 2;
+        //     break;
+        // }
+    // printf("%d\n", z);*/
+
+    /*char s[80], *sp = "WORLD!";
+    sp = strcpy(s, sp);
+    s[0] = 'w';
+    puts(sp);*/
+
+    /*
+     *printf("%ld\n", fib(4));
+     *
+     */
+
+    /*
+     *printf("%d\n", EOF); // -1
+    */
+
+    /*
+    // 20.
+    short p = 25;
+    printf("%d\n", ~p);
+    */
+
+    /*
+    // 21.
+    short m = 22, n = 9;
+    printf("%d\n", m ^ n);
+    */
+
+    /* 
+    // 22.
+    short a = 10;
+    printf("%d\n", a << 2);
+    */
+    
+    /* 
+    // 23.
+    int b = 48;
+    printf("%d\n", b >> 3);
+    */
+    
+    /* 
+    // 24.
+    int x = 24, y = 10;
+    printf("%d\n", (x & y) | ((x ^ y) >> 1));
+    */
+    
+    /* 
+    // 25.
+    int m = 30, n = 12;
+    printf("%d\n", (m | n) & ~(m & n));
+    */
+    
+    /* 
+    // 26.
+    int p = 20, q = 8;
+    printf("%d\n", (p << 1) ^ (q >> 2));
+    */
+    
+    /* 
+    // 27.
+    int m = 034, n = 056;
+    printf("%d\n", (m | n) & ~(m & n));
+    */
+
+    
+
+
+
+
+
 
     return 0;
 }
