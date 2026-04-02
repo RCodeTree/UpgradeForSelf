@@ -512,7 +512,7 @@ void printLink(Node* head)
     printf("\n");
 }
 
-Node* distinctNode(Node* head)
+/*Node* distinctNode(Node* head)
 {
     Node* p1 = head->next;
     Node *p2 = p1->next, *h = head;
@@ -533,7 +533,9 @@ Node* distinctNode(Node* head)
         }
     }
     return h;
-}
+}*/
+
+
 
 int main()
 {
@@ -1454,6 +1456,7 @@ int main()
         t2 = t2->next;
     }*/
 
+    /*
     Node
         head = {},
         n1 = {1, NULL},
@@ -1475,6 +1478,9 @@ int main()
     printLink(&head);
     distinctNode(&head);
     printLink(&head);
+    */
+
+
 
 
     return 0;
