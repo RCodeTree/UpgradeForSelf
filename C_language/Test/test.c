@@ -536,7 +536,6 @@ void printLink(Node* head)
 }*/
 
 
-
 int main()
 {
     /*int a[5] = {0};
@@ -1480,7 +1479,25 @@ int main()
     printLink(&head);
     */
 
+    /*FILE* f = fopen("d1.txt", "r");
+    if (!f)
+    {
+        perror("文件打开失败");
+        return -1;
+    }
+    float n, m;
+    int a[100];
+    fscanf(f, "%3s %f10.3 %10.3f", &n, &m);*/
 
+    /*int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int (*p)[3] = a;
+    int* q = a[0];
+    int t = 1;
+    int t2 = 2;
+    int* b[] = {&t, &t2};
+    int** c = &b[0];*/
+
+    
 
 
     return 0;
