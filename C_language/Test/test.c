@@ -535,6 +535,49 @@ void printLink(Node* head)
     return h;
 }*/
 
+typedef struct stu
+{
+    char name[9];
+    int cj;
+    struct stu* next;
+} stu;
+
+stu* del_stu(stu* h)
+{
+    stu *p1 = h, *p2;
+    if (h == NULL) return h;
+    if (h->cj < 60)
+    {
+        h = h->next;
+        free(p1);
+        p1 = h;
+    }
+    while (p1->next != NULL)
+    {
+        p2 = p1->next;
+        if (p2->cj < 60)
+        {
+            p1->next = p2->next;
+            free(p2);
+        }
+        else p1 = p2;
+    }
+    return h;
+}
+
+int f2(char* s)
+{
+    int i, j;
+    for (i = 0; i < strlen(s); i++)
+        for (j = i + 1; j < strlen(s); j++)
+            if (s[i] == s[j])
+            {
+                strcpy(s + j, s + j + 1);
+                return 1;
+            }
+    return 0;
+}
+
 
 int main()
 {
@@ -1347,37 +1390,37 @@ int main()
     printf("%d\n", m ^ n);
     */
 
-    /* 
+    /*
     // 22.
     short a = 10;
     printf("%d\n", a << 2);
     */
 
-    /* 
+    /*
     // 23.
     int b = 48;
     printf("%d\n", b >> 3);
     */
 
-    /* 
+    /*
     // 24.
     int x = 24, y = 10;
     printf("%d\n", (x & y) | ((x ^ y) >> 1));
     */
 
-    /* 
+    /*
     // 25.
     int m = 30, n = 12;
     printf("%d\n", (m | n) & ~(m & n));
     */
 
-    /* 
+    /*
     // 26.
     int p = 20, q = 8;
     printf("%d\n", (p << 1) ^ (q >> 2));
     */
 
-    /* 
+    /*
     // 27.
     int m = 034, n = 056;
     printf("%d\n", (m | n) & ~(m & n));
@@ -1497,8 +1540,69 @@ int main()
     int* b[] = {&t, &t2};
     int** c = &b[0];*/
 
-    
+    /*int i, j, k, a[4][4] = {
+            {2, -1, 2, 7},
+            {2, 4, 3, 5},
+            {1, 4, -2, 3},
+            {4, -2, 8, 3}
+        };
+    for (i = 0; i < 4; i++)
+    {
+        k = a[i][i];
+        printf("%d\n", k);
+        for (j = 0; j < 4; j++) a[i][j] /= k;
+    }
+    printf("\n\n");
+    for (i = 0; i < 4; i++)
+    {
+        for (j = 0; j < 4; j++) printf("%4d", a[i][j]);
+        putchar('\n');
+    }*/
 
+    /*// 三数中的最大值
+    int d;
+    int a = 4, b = 5, c = 0;
+    d = (d = a > b ? a : b) > c ? d : c;
+    printf("%d\n", d);*/
+
+    /*float a[8] = {
+        1.5, -2.3,
+        6.7, 4.5,
+        7.6, -3.1,
+        5.4, 3.2
+    };
+    int i, j, k;
+    for (i = 0; i < 4; i++)
+    {
+        k = 0;
+        for (j = 0; j < 8; j++)
+        {
+            if (i == j) continue;
+            if (a[i] < a[j]) k++;
+        }
+        printf("%d\n", k);
+    }*/
+
+    /*FILE *pa, *pb;
+    char aa[21];
+    float sl, jg;
+    pa = fopen("e:\\aaa.txt", "r");
+    pb = fopen("e:\\temp.txt", "w");
+    while (fscanf(pa, "%20s %10.3f%10.2f", aa, &sl, &jg) != EOF)
+        if (jg != 0) fprintf(pb, "%20s %10.3f %10.2f", aa, sl, jg);
+    fclose(pa);
+    fclose(pb);
+    remove("e:\\aaa.txt");
+    rename("e:\\temp.txt", "e:\\aaa.txt");*/
+
+    /*double a;
+    int n = 1;
+    scanf("%lf", &a);
+    if (a <= 1) return -1;
+    while (pow(1.1, n) <= a) n++;
+    printf("%d\n", n);*/
+
+    
 
     return 0;
 }
