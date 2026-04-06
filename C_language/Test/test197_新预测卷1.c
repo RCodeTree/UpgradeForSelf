@@ -19,7 +19,6 @@ int main() {
 	printf("%d %d %d %d\n", a, b, c, d);
 }*/
 
-
 /*void strCat(char* s, char* t)
 {
     while (*s != '\0')
@@ -98,7 +97,6 @@ int main()
 
 
 // 编程题
-
 /***
 @brief
 1. 编写一个函数 f(int u)，判断一个整数 u 是否同时是 3 的倍数和 5 的倍数。
@@ -136,7 +134,7 @@ int main()
     return 0;
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int search(int* arr, int flag, int len)
 {
@@ -164,5 +162,42 @@ int main()
     printf("最大值：%d\n", max);
     int diff = max - min;
     printf("差值：%d\n", diff);
+    return 0;
+}*/
+
+#include <stdio.h>
+
+struct Acc
+{
+    int id;
+    char name[20];
+    double money;
+};
+
+int main()
+{
+    FILE* fp1 = fopen("account.txt", "r");
+    FILE* fp2 = fopen("extreme.txt", "w");
+    struct Acc t, maxAcc, minAcc;
+    int cnt = 0;
+    double sum = 0;
+    // 初始化最值
+    fscanf(fp1, "%d%s%lf", &maxAcc.id, maxAcc.name, &maxAcc.money);
+    minAcc = maxAcc;
+    sum += maxAcc.money;
+    cnt++;
+    while (fscanf(fp1, "%d%s%lf", &t.id, t.name, &t.money) != EOF)
+    {
+        if (t.money > maxAcc.money) maxAcc = t;
+        if (t.money < minAcc.money) minAcc = t;
+        sum += t.money;
+        cnt++;
+    }
+    double avg = sum / cnt;
+    fprintf(fp2, "最高余额: %d %s %.2lf\n", maxAcc.id, maxAcc.name, maxAcc.money);
+    fprintf(fp2, "最低余额: %d %s %.2lf\n", minAcc.id, minAcc.name, minAcc.money);
+    fprintf(fp2, "平均余额: %.2lf\n", avg);
+    fclose(fp1);
+    fclose(fp2);
     return 0;
 }
