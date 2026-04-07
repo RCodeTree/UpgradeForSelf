@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语单词考察系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 28px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        /* 分类切换栏 */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 30px;
+            background: #e0e7ff;
+            color: #4f46e5;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .tab-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 模式切换 */
+        .mode-switch {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mode-btn {
+            padding: 8px 25px;
+            border: 2px solid #667eea;
+            border-radius: 30px;
+            background: white;
+            color: #667eea;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        /* 题目卡片 */
+        .card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .question {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+
+        .dictate-hint {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .voice-status {
+            min-height: 22px;
+            margin-bottom: 10px;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        /* 输入区域 */
+        .input-group {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #answerInput {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 18px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        #answerInput:focus {
+            border-color: #667eea;
+        }
+
+        /* 操作按钮 */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .operate-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #submitBtn {
+            background: #2563eb;
+            color: white;
+        }
+
+        #nextBtn {
+            background: #f59e0b;
+            color: white;
+        }
+
+        #showAnswerBtn {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .operate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 2);
+        }
+
+        /* 答案反馈 */
+        .result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            min-height: 30px;
+            line-height: 1.5;
+        }
+
+        .correct {
+            color: #10b981;
+        }
+
+        .error {
+            color: #ef4444;
+        }
+
+        /* 统计区域 */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stats span {
+            font-weight: bold;
+            color: #334155;
+        }
+
+        /* 错题历史区域（优化新增） */
+        .wrong-history {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .history-title {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        #clearWrongBtn {
+            padding: 6px 15px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #clearWrongBtn:hover {
+            background: #dc2626;
+        }
+
+        .history-list {
+            max-height: 220px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .history-item {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .history-item .word {
+            font-weight: bold;
+            color: #dc2626;
+        }
+
+        .history-item .info {
+            color: #666;
+            margin-left: 10px;
+        }
+
+        .empty-history {
+            text-align: center;
+            color: #94a3b8;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">英语单词考察学习系统</h1>
+
+        <!-- 分类切换 -->
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="base">基数词</button>
+            <button class="tab-btn" data-category="ordinal">序数词</button>
+            <button class="tab-btn" data-category="month">月份</button>
+            <button class="tab-btn" data-category="week">星期</button>
+            <button class="tab-btn" data-category="country">国家/国人</button>
+        </div>
+
+        <!-- 模式切换 -->
+        <div class="mode-switch">
+            <button class="mode-btn active" data-mode="study">单词考察</button>
+            <button class="mode-btn" data-mode="dictate">单词听写</button>
+        </div>
+
+        <!-- 题目卡片 -->
+        <div class="card">
+            <div class="dictate-hint" id="dictateHint" style="display: none;">🎧 系统会自动播放发音，请直接拼写英文单词</div>
+            <div class="voice-status" id="voiceStatus"></div>
+            <div class="question" id="question">准备开始学习</div>
+        </div>
+
+        <!-- 输入框 -->
+        <div class="input-group">
+            <input type="text" id="answerInput" placeholder="请输入答案..." autocomplete="off">
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="btn-group">
+            <button class="operate-btn" id="submitBtn">提交答案</button>
+            <button class="operate-btn" id="nextBtn">下一题</button>
+            <button class="operate-btn" id="showAnswerBtn">显示答案</button>
+        </div>
+
+        <!-- 结果反馈 -->
+        <div class="result" id="result"></div>
+
+        <!-- 统计 -->
+        <div class="stats">
+            <div>总题数：<span id="total">0</span></div>
+            <div>答对：<span id="correct" style="color:#10b981">0</span></div>
+            <div>答错：<span id="error" style="color:#ef4444">0</span></div>
+        </div>
+
+        <!-- 答错历史记录（优化新增） -->
+        <div class="wrong-history">
+            <div class="history-header">
+                <div class="history-title">❌ 答错历史记录</div>
+                <button id="clearWrongBtn">清空记录</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <div class="empty-history">暂无错题，继续加油！</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 单词数据库（五大分类）
+        const wordData = {
+            base: [
+                { en: "one", zh: "一" }, { en: "two", zh: "二" }, { en: "three", zh: "三" },
+                { en: "four", zh: "四" }, { en: "five", zh: "五" }, { en: "six", zh: "六" },
+                { en: "seven", zh: "七" }, { en: "eight", zh: "八" }, { en: "nine", zh: "九" },
+                { en: "ten", zh: "十" }, { en: "eleven", zh: "十一" }, { en: "twelve", zh: "十二" },
+                { en: "thirteen", zh: "十三" }, { en: "fourteen", zh: "十四" }, { en: "fifteen", zh: "十五" },
+                { en: "twenty", zh: "二十" }, { en: "thirty", zh: "三十" }, { en: "one hundred", zh: "一百" }
+            ],
+            ordinal: [
+                { en: "first", zh: "第一" }, { en: "second", zh: "第二" }, { en: "third", zh: "第三" },
+                { en: "fourth", zh: "第四" }, { en: "fifth", zh: "第五" }, { en: "sixth", zh: "第六" },
+                { en: "seventh", zh: "第七" }, { en: "eighth", zh: "第八" }, { en: "ninth", zh: "第九" },
+                { en: "tenth", zh: "第十" }, { en: "twentieth", zh: "第二十" }, { en: "thirtieth", zh: "第三十" }
+            ],
+            month: [
+                { en: "January", zh: "一月" }, { en: "February", zh: "二月" }, { en: "March", zh: "三月" },
+                { en: "April", zh: "四月" }, { en: "May", zh: "五月" }, { en: "June", zh: "六月" },
+                { en: "July", zh: "七月" }, { en: "August", zh: "八月" }, { en: "September", zh: "九月" },
+                { en: "October", zh: "十月" }, { en: "November", zh: "十一月" }, { en: "December", zh: "十二月" }
+            ],
+            week: [
+                { en: "Monday", zh: "星期一" }, { en: "Tuesday", zh: "星期二" }, { en: "Wednesday", zh: "星期三" },
+                { en: "Thursday", zh: "星期四" }, { en: "Friday", zh: "星期五" }, { en: "Saturday", zh: "星期六" },
+                { en: "Sunday", zh: "星期日" }
+            ],
+            country: [
+                { en: "China", zh: "中国" }, { en: "Chinese", zh: "中国人；中文" },
+                { en: "Japan", zh: "日本" }, { en: "Japanese", zh: "日本人；日语" },
+                { en: "America", zh: "美国" }, { en: "American", zh: "美国人" },
+                { en: "Canada", zh: "加拿大" }, { en: "Canadian", zh: "加拿大人" },
+                { en: "Britain", zh: "英国" }, { en: "British", zh: "英国人" },
+                { en: "France", zh: "法国" }, { en: "French", zh: "法国人；法语" },
+                { en: "Germany", zh: "德国" }, { en: "German", zh: "德国人" },
+                { en: "Australia", zh: "澳大利亚" }, { en: "Australian", zh: "澳大利亚人" }
+            ]
+        };
+
+        // 2. 全局变量（新增错题历史数组）
+        let currentCategory = "base";
+        let currentMode = "study";
+        let currentWord = {};
+        let total = 0, correct = 0, error = 0;
+        let wrongHistory = []; // 答错历史记录
+
+        // DOM元素
+        const tabs = document.querySelectorAll('.tab-btn');
+        const modeBtns = document.querySelectorAll('.mode-btn');
+        const questionEl = document.getElementById('question');
+        const answerInput = document.getElementById('answerInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const showAnswerBtn = document.getElementById('showAnswerBtn');
+        const resultEl = document.getElementById('result');
+        const voiceStatus = document.getElementById('voiceStatus');
+        const dictateHint = document.getElementById('dictateHint');
+        const statsTotal = document.getElementById('total');
+        const statsCorrect = document.getElementById('correct');
+        const statsError = document.getElementById('error');
+        const historyList = document.getElementById('historyList');
+        const clearWrongBtn = document.getElementById('clearWrongBtn');
+        const speechEngine = window.speechSynthesis || null;
+        const fallbackAudio = new Audio();
+        let availableVoices = [];
+        let englishVoice = null;
+        let nextQuestionTimer = null;
+        let replayTimer = null;
+        let playbackToken = 0;
+
+        // 分类名称映射
+        const categoryMap = {
+            base: "基数词", ordinal: "序数词", month: "月份", week: "星期", country: "国家/国人"
+        };
+
+        // 3. 核心函数：随机获取单词
+        function getRandomWord() {
+            clearQuestionTimers();
+            const list = wordData[currentCategory];
+            currentWord = list[Math.floor(Math.random() * list.length)];
+            renderQuestion();
+        }
+
+        // 4. 渲染题目
+        function renderQuestion() {
+            stopPlayback();
+            resultEl.textContent = "";
+            answerInput.value = "";
+            answerInput.focus();
+            voiceStatus.textContent = "";
+
+            if (currentMode === "study") {
+                dictateHint.style.display = "none";
+                const isShowEn = Math.random() > 0.5;
+                questionEl.textContent = isShowEn ? currentWord.en : currentWord.zh;
+            } else {
+                dictateHint.style.display = "block";
+                questionEl.textContent = "✍️ 请拼写单词";
+                playCurrentWord("正在准备自动播放发音...");
+            }
+        }
+
+        // 5. 语音朗读
+        function clearQuestionTimers() {
+            if (nextQuestionTimer) {
+                clearTimeout(nextQuestionTimer);
+                nextQuestionTimer = null;
+            }
+
+            if (replayTimer) {
+                clearTimeout(replayTimer);
+                replayTimer = null;
+            }
+        }
+
+        function stopPlayback() {
+            playbackToken++;
+            fallbackAudio.pause();
+            fallbackAudio.currentTime = 0;
+
+            if (speechEngine) {
+                speechEngine.cancel();
+            }
+        }
+
+        function playCurrentWord(statusText) {
+            if (!currentWord.en) return;
+
+            clearQuestionTimers();
+            stopPlayback();
+            voiceStatus.textContent = statusText;
+            speakWord(currentWord.en, playbackToken);
+        }
+
+        function scheduleNextQuestion() {
+            clearQuestionTimers();
+            nextQuestionTimer = setTimeout(() => {
+                nextQuestionTimer = null;
+                getRandomWord();
+            }, 800);
+        }
+
+        function pickEnglishVoice() {
+            availableVoices = speechEngine ? speechEngine.getVoices() : [];
+            englishVoice = availableVoices.find(voice => /^en(-|_)/i.test(voice.lang))
+                || availableVoices.find(voice => /english/i.test(voice.name))
+                || null;
+        }
+
+        function playFallbackAudio(text, token) {
+            fallbackAudio.pause();
+            fallbackAudio.currentTime = 0;
+            fallbackAudio.src = `https://dict.youdao.com/dictvoice?type=2&audio=${encodeURIComponent(text)}`;
+            if (token === playbackToken) {
+                voiceStatus.textContent = "正在加载发音...";
+            }
+
+            fallbackAudio.play()
+                .then(() => {
+                    if (token === playbackToken) {
+                        voiceStatus.textContent = "系统已自动播放发音...";
+                    }
+                })
+                .catch(() => {
+                    if (token === playbackToken) {
+                        voiceStatus.textContent = "当前浏览器无法播放发音，请检查系统音量或更换浏览器重试。";
+                    }
+                });
+        }
+
+        function speakWord(text, token) {
+            if (!text) return;
+
+            fallbackAudio.pause();
+            fallbackAudio.currentTime = 0;
+
+            if (!speechEngine || typeof SpeechSynthesisUtterance === "undefined") {
+                playFallbackAudio(text, token);
+                return;
+            }
+
+            pickEnglishVoice();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = englishVoice ? englishVoice.lang : "en-US";
+            utterance.voice = englishVoice;
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            utterance.volume = 1;
+            utterance.onstart = () => {
+                if (token === playbackToken) {
+                    voiceStatus.textContent = "系统已自动播放发音...";
+                }
+            };
+            utterance.onend = () => {
+                if (token === playbackToken) {
+                    voiceStatus.textContent = "播放完成，请直接拼写单词。";
+                }
+            };
+            utterance.onerror = () => {
+                if (token === playbackToken) {
+                    playFallbackAudio(text, token);
+                }
+            };
+
+            try {
+                speechEngine.speak(utterance);
+            } catch (error) {
+                playFallbackAudio(text, token);
+            }
+        }
+
+        // 6. 获取单词解释（优化新增：分类化错误解释）
+        function getWordExplanation() {
+            switch (currentCategory) {
+                case "base": return "📌 基数词：表示数量的数字";
+                case "ordinal": return "📌 序数词：表示顺序的数字";
+                case "month": return "📌 月份：一年的12个月份，首字母必须大写";
+                case "week": return "📌 星期：一周的7天，首字母必须大写";
+                case "country": return "📌 国家/国人：区分国家名称和对应人种称呼";
+                default: return "";
+            }
+        }
+
+        // 7. 检查答案（核心优化：自动跳题+错题解释+记录错题）
+        function checkAnswer() {
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            if (!userAnswer) {
+                resultEl.textContent = "请输入答案！";
+                resultEl.className = "result error";
+                return;
+            }
+
+            total++;
+            let isCorrect = false;
+
+            if (currentMode === "study") {
+                const showEn = questionEl.textContent === currentWord.en;
+                const correctAnswer = showEn ? currentWord.zh.toLowerCase() : currentWord.en.toLowerCase();
+                isCorrect = userAnswer === correctAnswer;
+            } else {
+                isCorrect = userAnswer === currentWord.en.toLowerCase();
+            }
+
+            // 结果处理
+            if (isCorrect) {
+                correct++;
+                resultEl.textContent = "✅ 回答正确！";
+                resultEl.className = "result correct";
+                scheduleNextQuestion();
+            } else {
+                error++;
+                addWrongHistory();
+
+                if (currentMode === "dictate") {
+                    resultEl.textContent = "❌ 拼写错误，正在重播当前单词，请再听一遍。";
+                    resultEl.className = "result error";
+                    clearQuestionTimers();
+                    replayTimer = setTimeout(() => {
+                        replayTimer = null;
+                        playCurrentWord("正在重播当前单词...");
+                    }, 500);
+                } else {
+                    const explain = getWordExplanation();
+                    resultEl.innerHTML = `❌ 回答错误！<br>正确答案：${currentWord.en} - ${currentWord.zh} | ${explain}`;
+                    resultEl.className = "result error";
+                }
+            }
+
+            updateStats();
+        }
+
+        // 8. 更新统计
+        function updateStats() {
+            statsTotal.textContent = total;
+            statsCorrect.textContent = correct;
+            statsError.textContent = error;
+        }
+
+        // 9. 添加错题记录（优化新增）
+        function addWrongHistory() {
+            const record = {
+                category: categoryMap[currentCategory],
+                en: currentWord.en,
+                zh: currentWord.zh,
+                time: new Date().toLocaleTimeString() // 记录答题时间
+            };
+            wrongHistory.unshift(record); // 最新错题置顶
+            renderWrongHistory();
+        }
+
+        // 10. 渲染错题历史（优化新增）
+        function renderWrongHistory() {
+            if (wrongHistory.length === 0) {
+                historyList.innerHTML = '<div class="empty-history">暂无错题，继续加油！</div>';
+                return;
+            }
+
+            let html = '';
+            wrongHistory.forEach(item => {
+                html += `
+                <div class="history-item">
+                    <span class="word">[${item.category}] ${item.en}</span>
+                    <span class="info">${item.zh} | ${item.time}</span>
+                </div>
+                `;
+            });
+            historyList.innerHTML = html;
+        }
+
+        // 11. 清空错题记录（优化新增）
+        function clearWrongHistory() {
+            wrongHistory = [];
+            error = 0;
+            updateStats();
+            renderWrongHistory();
+        }
+
+        // 12. 事件绑定
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentCategory = tab.dataset.category;
+                getRandomWord();
+            });
+        });
+
+        modeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentMode = btn.dataset.mode;
+                getRandomWord();
+            });
+        });
+
+        submitBtn.addEventListener('click', checkAnswer);
+        nextBtn.addEventListener('click', getRandomWord);
+        showAnswerBtn.addEventListener('click', () => {
+            clearQuestionTimers();
+            resultEl.textContent = `📖 正确答案：${currentWord.en} - ${currentWord.zh}`;
+            resultEl.className = "result";
+        });
+        clearWrongBtn.addEventListener('click', clearWrongHistory);
+        answerInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') checkAnswer();
+        });
+        fallbackAudio.addEventListener('ended', () => {
+            if (currentMode === "dictate") {
+                voiceStatus.textContent = "播放完成，请直接拼写单词。";
+            }
+        });
+        if (speechEngine) {
+            pickEnglishVoice();
+            speechEngine.onvoiceschanged = pickEnglishVoice;
+        }
+
+        // 初始化
+        getRandomWord();
+    </script>
+</body>
+
+</html>
