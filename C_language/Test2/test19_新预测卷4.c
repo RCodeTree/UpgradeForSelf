@@ -18,7 +18,6 @@ int main()
     return 0;
 }*/
 
-/*
 #include <stdio.h>
 
 union U
@@ -34,10 +33,9 @@ int main()
     printf("%c\n", u.b);
     return 0;
 }
-*/
 
 // 编程题
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -61,7 +59,7 @@ int main()
 	for (int i = 0; i < 10; i++) printf("%d ", arr[i]);
 	printf("\n");
 	return 0;
-}
+}*/
 
 
 
