@@ -21,10 +21,11 @@ int main()
 // 编程题
 void f(int* a, int* b, int la, int lb, int* c, int lc)
 {
-    int i, j, k, t;
+    int i, j, k;
     int q = 0;
     for (i = 0; i < la; i++)
     {
+	int t = 0;
         for (j = 0; j < lb; j++)
         {
             if (a[i] == b[j])
@@ -35,7 +36,7 @@ void f(int* a, int* b, int la, int lb, int* c, int lc)
         }
         for (k = 0; k < lc; k++)
         {
-            if (t != c[k] && j < lb)
+            if (t != c[k])
             {
                 c[q++] = t;
                 break;
