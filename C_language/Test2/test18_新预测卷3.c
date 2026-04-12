@@ -19,13 +19,13 @@ int main()
 }*/
 
 // 编程题
-void f(int* a, int* b, int la, int lb, int* c, int lc)
+int f(int* a, int* b, int la, int lb, int* c, int lc)
 {
     int i, j, k;
     int q = 0;
     for (i = 0; i < la; i++)
     {
-	int t = 0;
+        int t = 0;
         for (j = 0; j < lb; j++)
         {
             if (a[i] == b[j])
@@ -34,15 +34,16 @@ void f(int* a, int* b, int la, int lb, int* c, int lc)
                 break;
             }
         }
+        int flag = 0;
         for (k = 0; k < lc; k++)
         {
-            if (t != c[k])
+            if (t == c[k])
             {
-                c[q++] = t;
+                flag = 1;
                 break;
             }
-            else break;
         }
+        if (flag == 0) c[q++] = t;
     }
     for (int i = 0; i < q; i++)
         for (int j = 0; j < q - 1 - i; j++)
@@ -52,16 +53,18 @@ void f(int* a, int* b, int la, int lb, int* c, int lc)
                 c[j] = c[j + 1];
                 c[j + 1] = temp;
             }
+    return q;
 }
 
 int main()
 {
-    int a[5] = {1, 1, 2, 3, 4}, b[6] = {2, 1, 3, 5, 6, 7};
+    int a[5] = {2, 3, 13, 4, 3},
+        b[6] = {2, 3, 11, 9, 1, 0};
     int c[100] = {0};
-    f(a, b, 5, 6, c, 100);
+    int len = f(a, b, 5, 6, c, 100);
     printf("交集:\n");
-    for (int i = 0; i < 100; i++)
-        if (c[i] != 0) printf("%d ", c[i]);
+    for (int i = 0; i < len; i++)
+        printf("%d ", c[i]);
     printf("\n");
     return 0;
 }
