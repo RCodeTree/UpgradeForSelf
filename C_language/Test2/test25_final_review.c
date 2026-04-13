@@ -77,6 +77,12 @@ int num(int x, int y) // x = 1, y = 0
     return x-- > (y + x) ? 5 : 25 > y++ ? '1' : '2';
 }
 
+/**
+ * @param x 整数x
+ * @param y 整数y
+ * @return 无
+ * @note 无
+ */
 void printNum(int x, int y)
 {
     printf("%d\n", x++);
@@ -85,6 +91,21 @@ void printNum(int x, int y)
     printf("%d\n", x++);
     printf("%d\n", x++);
     printf("%d\n", x++);
+}
+
+double eightToTen(char* s)
+{
+    int l = strlen(s);
+	int n = l - 1;
+	double r = 0;
+	while (l)
+	{
+		r += pow(8, n) * (*s - '0');
+		n--;
+		s++;
+		l--; 
+	}
+	return r;
 }
 
 int main()
@@ -119,5 +140,9 @@ int main()
     printNum(1, 0);
 
     printf("----------------------------------\n");
+
+	printf("%.0f\n", eightToTen("556"));
+    
+	printf("----------------------------------\n");
     return 0;
 }
