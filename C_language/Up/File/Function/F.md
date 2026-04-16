@@ -288,9 +288,9 @@ int fseek(FILE *stream, long offset, int whence);
 - `whence`：起始位置
 
 #### 常用whence参数
-- SEEK_SET：从文件开头开始
-- SEEK_CUR：从当前位置开始
-- SEEK_END：从文件末尾开始
+- SEEK_SET：从文件开头开始 0 
+- SEEK_CUR：从当前位置开始 1
+- SEEK_END：从文件末尾开始 2
 
 #### 示例
 ```c
