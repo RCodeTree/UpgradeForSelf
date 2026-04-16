@@ -163,6 +163,47 @@ int getSum(int m)
     return s;
 }
 
+/**
+ * 在字符串s中搜索字符串search
+ * @param s 字符串s
+ * @param search 字符串search
+ * @return 整数i或-1，i为search在s中的位置，-1为未找到
+ * @note 无
+ */
+int searchStr(char* s, char* search)
+{
+    /*int i, j, k;
+    int len1 = strlen(s);
+    int len2 = strlen(search);
+    for (i = 0; i < len1; i++)
+    {
+        j = i;
+        for (k = 0; k < len2; k++)
+        {
+            if (s[j] != search[k]) break;
+            j++;
+        }
+        if (search[k] == '\0') return i;
+    }
+    return -1;*/
+
+    char *p1 = s, *p2 = search;
+    while (*p1)
+    {
+        char* t = p1;
+        p2 = search;
+        while (*p2)
+        {
+            if (*t != *p2) break;
+            t++;
+            p2++;
+        }
+        if (*p2 == '\0') return p1 - s;
+        p1++;
+    }
+    return -1;
+}
+
 int main()
 {
     char a[100] = "abcd1235";
@@ -223,6 +264,10 @@ int main()
         for (j = 3 - i; j < 4; j++) printf("%3d", a1[i][j]);
         putchar('\n');
     }
+
+    printf("----------------------------------\n");
+
+    printf("%d\n", searchStr("abcd1235", "123"));
 
     return 0;
 }
